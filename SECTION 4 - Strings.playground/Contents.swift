@@ -27,4 +27,21 @@ var one_value = true, two_value = false
 
 var show_emoji:String = "😂😅"
 
+var 🐷 = "🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷🐷"
+
+🐷
+
+var 🏀:String = "I love 🏀"
+
+var 😅 = "😂 ...."
+
+😅
+
+//Ejercicios con Emojis Section 4, Lecture 34 -> Crea una variable de tipo string y nómbrala con un emoji. Asígnale cualquier valor
+var 🏖 = "Me gusta la playa"
+
+print(🏖)
+
+
+
 
