@@ -6,7 +6,7 @@ Por ahora he completado las 4 primeras secciones al 100%, siendo la sección 2 e
 
 Por ahora, muy contento con el curso, muchas gracias Juan Gabriel (https://www.udemy.com/user/juangabriel2/)
 
-Tips sobre temas del IDE que me he ido encontrando y he descubierto ya que no aparecían en el curso.
+**Tips sobre temas del IDE que me he ido encontrando y he descubierto ya que no aparecían en el curso.**
 
 Mostrar el Storyboard del proyecto dentro del IDE sin mostrar una pantalla externa.
 
