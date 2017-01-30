@@ -86,4 +86,12 @@ let pi = 3.12
  Crea una variable de tipo double para guardar su valor.
  **************************************************************/
 
+
+//Busca en la wikipedia información sobre el número e (https://es.wikipedia.org/wiki/Número_e)
+//Crea una variable de tipo float para guardar su valor.
 let e:Float = 2.71828182845904523536
+
+//Busca en la wikipedia información sobre el número de oro ( https://es.wikipedia.org/wiki/Número_áureo)
+//Crea una variable de tipo double para guardar su valor.
+
+let oro:Double = 1.61803398874988
