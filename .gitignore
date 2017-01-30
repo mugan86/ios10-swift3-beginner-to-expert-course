@@ -59,6 +59,9 @@ Carthage/Build
 # For more information about the recommended setup visit:
 # https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Gitignore.md
 
+# MAC files
+.DS_Store
+
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
