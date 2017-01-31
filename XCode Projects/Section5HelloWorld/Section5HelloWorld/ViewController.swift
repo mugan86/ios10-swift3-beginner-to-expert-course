@@ -10,9 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var helloWorldLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        helloWorldLabel.text = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +30,7 @@ class ViewController: UIViewController {
         print("Hemos pulsado el botón!!  😃")
         
         //Configuration to alert Controller with title, message and use prefered style
-        let alertController: UIAlertController = UIAlertController(title: "Hello World 😅",
+        /*let alertController: UIAlertController = UIAlertController(title: "Hello World 😅",
                                                                    message: "Test with Alert Controller💪", preferredStyle: .alert)
         
         //Add action button to close alert Controller after show in app
@@ -37,7 +42,9 @@ class ViewController: UIViewController {
         alertController.addAction(okAlertButton)
         
         //Show Alert controller with alertControllerUI elements and OK action
-        present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)*/
+        
+        helloWorldLabel.text = "¡Hello! ¿Cómo estás?😊"
     }
 
 }
