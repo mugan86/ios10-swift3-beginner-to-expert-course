@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var helloWorldLabel: UILabel!
     
+    @IBOutlet var inputUITextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
