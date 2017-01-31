@@ -23,6 +23,11 @@ class ViewController: UIViewController {
     @IBAction func buttonClickPressed(_ sender: UIButton) {
         
         print("Hemos pulsado el botón!!  😃")
+        
+        //Configuration to alert Controller with title, message and use prefered style
+        let alertController: UIAlertController = UIAlertController(title: "Hello World 😅",
+                                                                   message: "Test with Alert Controller💪", preferredStyle: .alert)
+        present(alertController, animated: true, completion: nil)
     }
 
 }
