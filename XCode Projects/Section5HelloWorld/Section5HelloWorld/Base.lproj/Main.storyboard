@@ -46,6 +46,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="running2" translatesAutoresizingMaskIntoConstraints="NO" id="JLR-XI-COy">
+                                <rect key="frame" x="0.0" y="323" width="320" height="245"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.30371118538421787" green="0.89496073298429324" blue="0.44291851109514757" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -59,4 +63,7 @@
             <point key="canvasLocation" x="136.875" y="138.38028169014083"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="running2" width="1600" height="1066"/>
+    </resources>
 </document>
