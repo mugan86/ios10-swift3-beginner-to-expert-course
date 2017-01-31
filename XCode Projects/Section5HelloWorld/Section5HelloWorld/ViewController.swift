@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         //Show Alert controller with alertControllerUI elements and OK action
         present(alertController, animated: true, completion: nil)*/
         
-        let inputName = inputUITextField.text
+        let inputName = inputUITextField.text! //Add '!' to get only text (similar to getText().toString() in Android (Java)...
         
         helloWorldLabel.text = "¡Hello \(inputName)! ¿Cómo estás?😊"
     }
