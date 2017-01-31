@@ -50,6 +50,10 @@
                                 <rect key="frame" x="0.0" y="323" width="320" height="245"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Za5-Bg-KSj">
+                                <rect key="frame" x="10" y="333" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.30371118538421787" green="0.89496073298429324" blue="0.44291851109514757" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
