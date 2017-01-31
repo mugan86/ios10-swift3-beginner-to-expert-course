@@ -20,6 +20,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func buttonClickPressed(_ sender: UIButton) {
+        
+        print("Hemos pulsado el botón!!  😃")
+    }
 
 }
 
