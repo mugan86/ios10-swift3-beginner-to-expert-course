@@ -29,6 +29,7 @@ class ViewController: UIViewController {
                                                                    message: "Test with Alert Controller💪", preferredStyle: .alert)
         
         //Add action button to close alert Controller after show in app
+        //style: default = OK in blue default color / destructive (red color)
         
         let okAlertButton: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         
