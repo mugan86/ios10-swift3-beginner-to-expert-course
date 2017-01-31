@@ -6,9 +6,11 @@ Por ahora he completado las 4 primeras secciones al 100%, siendo la sección 2 e
 
 Por ahora, muy contento con el curso, muchas gracias Juan Gabriel (https://www.udemy.com/user/juangabriel2/)
 
-**Tips sobre temas del IDE que me he ido encontrando y he descubierto ya que no aparecían en el curso.**
+**Tips sobre temas del IDE que me he ido encontrando y he descubierto ya que no aparecían en el curso o simplemente necesito recordar.**
 
-Mostrar el Storyboard del proyecto dentro del IDE sin mostrar una pantalla externa.
+* Añadir emojis en el código: **CMD + CTRL + SPACE.**
+
+* Mostrar el Storyboard del proyecto dentro del IDE sin mostrar una pantalla externa.
 
 Ir a dentro del proyecto al fichero **"Main.storyboard"**, click derecho con el ratón y seleccionar **"Open As.../Interface Builder"**:
 
