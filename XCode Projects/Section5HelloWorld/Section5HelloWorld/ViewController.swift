@@ -45,7 +45,9 @@ class ViewController: UIViewController {
         //Show Alert controller with alertControllerUI elements and OK action
         present(alertController, animated: true, completion: nil)*/
         
-        helloWorldLabel.text = "¡Hello! ¿Cómo estás?😊"
+        let inputName = inputUITextField.text
+        
+        helloWorldLabel.text = "¡Hello \(inputName)! ¿Cómo estás?😊"
     }
 
 }
