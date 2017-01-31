@@ -9,7 +9,7 @@ Por ahora, muy contento con el curso, muchas gracias Juan Gabriel (https://www.u
 **Tips sobre temas del IDE que me he ido encontrando y he descubierto ya que no aparecían en el curso o simplemente necesito recordar.**
 
 * Añadir emojis en el código: **CMD + CTRL + SPACE.**
-
+* Mostrar teclado en el emulador del teléfono si no aparece al hacer click en el TextField: **CMD + K** o en el simulador Hardware / Keyboard / Toggle Keyboard...
 * Mostrar el Storyboard del proyecto dentro del IDE sin mostrar una pantalla externa.
 
 Ir a dentro del proyecto al fichero **"Main.storyboard"**, click derecho con el ratón y seleccionar **"Open As.../Interface Builder"**:
