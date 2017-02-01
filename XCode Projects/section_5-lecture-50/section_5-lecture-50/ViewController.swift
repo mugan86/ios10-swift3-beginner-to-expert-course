@@ -106,15 +106,18 @@ class ViewController: UIViewController {
                 infoMessageAfterAddLabel.text = "¡¡El alumno \(getNameFromNameInputTextField) añadido correctamente!! 😀"
                 
                 print(lstAlumnosLabel.text!)
+                //Clean and focus in students textfield
+                focusInStudent()
             }
             else
             {
                 print("No has añadido nada, anda escribe algo!! 😡")
                 infoMessageAfterAddLabel.text = "¡¡No has escrito nada!! Escribe nombres de alumnos por favor 😅"
+                
+                focusInTeacher()
             }
             
-            //Clean and focus in students textfield
-            focusInStudent()
+            
             
             showAlertMessage(_title: "Add student", _message: infoMessageAfterAddLabel.text!, _type: 2)
             
