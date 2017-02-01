@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        lstAlumnosLabel.text = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,9 +31,20 @@ class ViewController: UIViewController {
         
         let getNameFromNameInputTextField = nameInputTextField.text!
         
+        var text:String = lstAlumnosLabel.text!
+        
+        //http://stackoverflow.com/a/24037756/3655781
+        if ((lstAlumnosLabel.text!.characters.count) > 0)
+        {
+            //Add return line if list contain one student
+            let tempText = lstAlumnosLabel.text! + "\r\n"
+            text = tempText
+        }
+        
         if (getNameFromNameInputTextField != "")
         {
             print(getNameFromNameInputTextField)
+            lstAlumnosLabel.text = text + getNameFromNameInputTextField
         }
         else
         {
