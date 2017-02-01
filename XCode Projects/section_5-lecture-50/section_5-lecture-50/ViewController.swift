@@ -29,6 +29,8 @@ class ViewController: UIViewController {
 
     @IBAction func addStudentButton(_ sender: Any) {
         
+        showAlertMessage()
+        
         let getNameFromNameInputTextField = nameInputTextField.text!
         
         var text:String = lstAlumnosLabel.text!
@@ -45,7 +47,7 @@ class ViewController: UIViewController {
         {
             print(getNameFromNameInputTextField)
             lstAlumnosLabel.text = text + getNameFromNameInputTextField
-            infoMessageAfterAddLabel.text = "El alumno \(getNameFromNameInputTextField) añadido!! 😀"
+            infoMessageAfterAddLabel.text = "¡¡El alumno \(getNameFromNameInputTextField) añadido correctamente!! 😀"
             
             //RESET INPUT TEXT with empty
             nameInputTextField.text = ""
@@ -58,6 +60,27 @@ class ViewController: UIViewController {
         
         //Test to return function
         print(textReturn())
+    }
+    
+    func showAlertMessage()
+    {
+        //Configuration to alert Controller with title, message and use prefered style
+        let alertController: UIAlertController = UIAlertController(title: "Hello World 😅",
+         message: "Test with Alert Controller💪", preferredStyle: .alert)
+         
+         //Add action button to close alert Controller after show in app
+         //style: default = OK in blue default color / destructive (red color)
+         
+         let okAlertButton: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+         
+         //Add action after configure to use in alertController
+         alertController.addAction(okAlertButton)
+        
+        let cancelAlertButton: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+         alertController.addAction(cancelAlertButton)
+         //Show Alert controller with alertControllerUI elements and OK action
+         present(alertController, animated: true, completion: nil)
     }
     
     //Function to return String
