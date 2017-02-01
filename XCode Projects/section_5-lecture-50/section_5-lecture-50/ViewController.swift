@@ -30,8 +30,14 @@ class ViewController: UIViewController {
         
         let getNameFromNameInputTextField = nameInputTextField.text!
         
-        print(getNameFromNameInputTextField)
-
+        if (getNameFromNameInputTextField != "")
+        {
+            print(getNameFromNameInputTextField)
+        }
+        else
+        {
+            print("No has añadido nada, anda escribe algo!! 😡")
+        }
     }
 
     
