@@ -55,6 +55,15 @@ class ViewController: UIViewController {
             print("No has añadido nada, anda escribe algo!! 😡")
             infoMessageAfterAddLabel.text = "¡¡No has escrito nada!! Escribe nombres de alumnos por favor 😅"
         }
+        
+        //Test to return function
+        print(textReturn())
+    }
+    
+    //Function to return String
+    func textReturn() -> String
+    {
+        return "Some text";
     }
 
     
