@@ -10,11 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //Student input text
     @IBOutlet var nameInputTextField: UITextField!
     
+    //Teacher input text
+    @IBOutlet var teacherNameInputTextField: UITextField!
+    
+    //Messages about action to info user
+    
+    //Message info show when add one student
     @IBOutlet var infoMessageAfterAddLabel: UILabel!
     
+    //Teacher info status show when add teacher
+    @IBOutlet var teacherAccessInfoMessagesLabel: UILabel!
+    
+    //Show all add students
     @IBOutlet var lstAlumnosLabel: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +40,20 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func addTeacher(_ sender: Any) {
+        if (teacherNameInputTextField.text!.characters.count > 0)
+        {
+            let print_message = "bienvenido al sistema para añadir alumnos \(teacherNameInputTextField.text!)"
+            print(print_message)
+            
+        }
+        else{
+            
+            let print_message = "error"
+            print (print_message)
+        }
+    }
+    
     @IBAction func addStudentButton(_ sender: Any) {
         
         showAlertMessage()
@@ -72,11 +99,11 @@ class ViewController: UIViewController {
          //style: default = OK in blue default color / destructive (red color)
          
          let okAlertButton: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-         
+        
          //Add action after configure to use in alertController
          alertController.addAction(okAlertButton)
         
-        let cancelAlertButton: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAlertButton: UIAlertAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
         
          alertController.addAction(cancelAlertButton)
          //Show Alert controller with alertControllerUI elements and OK action
