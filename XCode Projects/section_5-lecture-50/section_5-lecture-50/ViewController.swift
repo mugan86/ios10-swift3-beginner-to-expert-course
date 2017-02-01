@@ -41,22 +41,26 @@ class ViewController: UIViewController {
     }
 
     @IBAction func addTeacher(_ sender: Any) {
+        var print_str:String = ""
         if (teacherNameInputTextField.text!.characters.count > 0)
         {
-            let print_message = "bienvenido al sistema para añadir alumnos \(teacherNameInputTextField.text!)"
+            let print_message = "Bienvenido al sistema para añadir alumnos \(teacherNameInputTextField.text!) 🤗"
             print(print_message)
+            print_str = print_message
             
         }
         else{
             
-            let print_message = "error"
+            let print_message = "error 😱"
             print (print_message)
+            print_str = print_message
         }
+        teacherAccessInfoMessagesLabel.text = print_str
     }
     
     @IBAction func addStudentButton(_ sender: Any) {
         
-        showAlertMessage()
+        //showAlertMessage()
         
         let getNameFromNameInputTextField = nameInputTextField.text!
         
