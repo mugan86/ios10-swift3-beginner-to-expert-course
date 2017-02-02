@@ -121,3 +121,26 @@ else
 {
     print("Soy menor de edad")
 }
+
+// Section 7 Lecture Lecture 73 (AND / OR operators)
+
+let height : Double = 1.90
+
+//WITH AND ONLY (pending to finish)
+
+if height > 1.80 && age_ >= 18
+{
+    print("Soy mayor de edad (\(age_) años ) y mido más de 1.80 (\(height))")
+}
+else if height <= 1.80 && age_ >= 18
+{
+    print("Soy mayor de edad (\(age_) años ) y mido 1.80 o menos (\(height))")
+}
+else if height > 1.80 && age_ < 18
+{
+    print("Soy menor de edad (\(age_) años ) y mido más de 1.80 (\(height))")
+}
+else // height <= 1.80 && age_ < 18
+{
+    print("Soy menor de edad (\(age_) años ) y mido 1.80 o menos(\(height))")
+}
