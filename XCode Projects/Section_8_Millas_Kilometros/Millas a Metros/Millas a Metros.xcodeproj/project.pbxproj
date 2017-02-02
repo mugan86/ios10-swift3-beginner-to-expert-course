@@ -416,7 +416,7 @@
 				DEVELOPMENT_TEAM = 2QS9LESHGS;
 				INFOPLIST_FILE = "Millas a Metros/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.amugika.millasmetros.Millas-a-Metros";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amugika.millasmetros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -429,7 +429,7 @@
 				DEVELOPMENT_TEAM = 2QS9LESHGS;
 				INFOPLIST_FILE = "Millas a Metros/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.amugika.millasmetros.Millas-a-Metros";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amugika.millasmetros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
