@@ -57,3 +57,33 @@ else
 {
     print("No sumamos nada")
 }
+
+//Section 7 - Lecture 69
+
+let x = 8
+let y = 7
+
+if x >= y
+{
+    if x == y{
+        print("x igual a y")
+    }
+    else
+    {
+        print("X mayor que y")
+    }
+    
+}
+else if x <= y
+{
+    print("x menor que y")
+}
+
+let name_ : String = "Anartz"
+
+if name_ != "Anartz"
+{
+    wallet += 200
+}
+
+
