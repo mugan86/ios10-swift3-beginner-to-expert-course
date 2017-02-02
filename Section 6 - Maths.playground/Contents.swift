@@ -1,5 +1,8 @@
 //: Playground - Aritmética elemental
 
+//Para usar el framework Foundation
+import Foundation
+
 //Operaciones con enteros Section 6 - Lecture 54
 let x = 7
 let y = 5
@@ -75,7 +78,7 @@ let age_without_type = 31.0
 age / 3
 age_without_type / 3
 
-let pi = 3.12
+let pi:Float = 3.1415926536
 
 /**************************************************************
  Ejercicios de aritmética
@@ -95,3 +98,111 @@ let e:Float = 2.71828182845904523536
 //Crea una variable de tipo double para guardar su valor.
 
 let oro:Double = 1.61803398874988
+
+/**************************************************************
+ Ejercicios de aritmética
+ Section 6, Lecture 56
+ **************************************************************/
+
+let radius: Double = 5
+
+//Parsear pi en double
+Double(pi) * radius
+
+radius
+
+//Parsear un int en float para poder multiplicar
+let radius_int: Int = 5
+
+pi * Float(radius_int)
+
+let x_value = 2.9999999
+
+Int(x_value)
+
+Int(pi * Float(radius_int))
+
+/*Ejercicios de castings
+Sección 6, Clase 59
+Crea una variable entera con el valor del día del mes en que naciste y otra decimal con el valor del número e del ejercicio anterior.
+Suma dichos valores y obtén un resultado con decimales.
+Suma dichos valores y obtén un resultado entero.
+¿Dan ambas soluciones el mismo valor? ¿Por qué?*/
+
+//Crea una variable entera con el valor del día del mes en que naciste y otra decimal con el valor del número e del ejercicio anterior.
+let int_dia_del_mes_que_naci: Int = 10
+
+let decimal_dia_del_mes_que_naci: Float = 10.0
+
+//Suma dichos valores y obtén un resultado con decimales.
+
+Float(int_dia_del_mes_que_naci) + decimal_dia_del_mes_que_naci
+
+//Suma dichos valores y obtén un resultado entero.
+
+int_dia_del_mes_que_naci + Int(decimal_dia_del_mes_que_naci)
+
+/*¿Dan ambas soluciones el mismo valor? ¿Por qué?
+ 
+ La razón de que de el mismo resultado tiene su razón en que el valor del día al ser un valor que en condiciones normales es entero, si le ponemos decimales es decir ".0" lo considera que es 10 a la hora de sumar
+ */
+
+
+/**************************************************************
+ Foundation Framework
+ Section 6, Lecture 60
+ **************************************************************/
+
+var pi_value = 3.14159265
+
+Int(pi_value)
+
+floor(pi_value) //Redondear para abajo
+ceil(pi_value)  //Redondear hacia arriba
+
+sqrt(3)
+
+sqrt(4)
+
+sqrt(4.0)
+
+pow(5,3) //5^3
+
+pow(2,8)
+
+var wallet = 50
+
+wallet -= 7
+
+wallet -= 8
+
+wallet -= 10
+
+wallet -= 5
+
+wallet -= 20
+
+/*
+ Ejercicio de matemáticas
+ Sección 6, Clase 61
+ Crea una variable numérica y utilízala para hacer una potencia, una raíz, un floor, un ceil, un += y un -=.
+ */
+
+var numero_:Double = 12.344444
+
+pow(numero_, 2)     //Potencia
+
+sqrt(numero_)       //Raíz
+
+floor(numero_)      //Redondeo hacia abajo
+
+ceil(numero_)       //Redonde hacia arriba
+
+numero_ += 12.345   //Suma al valor actual
+
+numero_ -= 14.432   //Resta al valor actual
+
+
+
+
+
