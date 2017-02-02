@@ -17,3 +17,11 @@ Sección 7, Clase 66
 Crea una variable booleana isWoman, y asígnala a verdadero o falso según si eres o no una mujer.*/
 
 let isWoman: Bool = false
+
+if (isWoman)
+{
+    print("Soy mujer")
+}
+else{
+    print("Soy hombre")
+}
