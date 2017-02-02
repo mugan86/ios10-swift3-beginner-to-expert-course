@@ -75,7 +75,7 @@ let age_without_type = 31.0
 age / 3
 age_without_type / 3
 
-let pi = 3.12
+let pi:Float = 3.1415926536
 
 /**************************************************************
  Ejercicios de aritmética
@@ -95,3 +95,15 @@ let e:Float = 2.71828182845904523536
 //Crea una variable de tipo double para guardar su valor.
 
 let oro:Double = 1.61803398874988
+
+/**************************************************************
+ Ejercicios de aritmética
+ Section 6, Lecture 56
+ **************************************************************/
+
+let radius: Double = 5
+
+//Parsear pi en double
+Double(pi) * radius
+
+radius
