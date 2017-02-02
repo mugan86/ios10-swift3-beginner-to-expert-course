@@ -126,7 +126,7 @@ else
 
 let height : Double = 1.90
 
-//WITH AND ONLY (pending to finish)
+//WITH AND ONLY
 
 if height > 1.80 && age_ >= 18
 {
@@ -143,4 +143,11 @@ else if height > 1.80 && age_ < 18
 else // height <= 1.80 && age_ < 18
 {
     print("Soy menor de edad (\(age_) años ) y mido 1.80 o menos(\(height))")
+}
+
+//Requirements to canRide car
+
+if height > 1.80 || age_ >= 18 //age_ = 17 / height = 1.90 TRUE OR FALSE = TRUE
+{
+    print("Soy mayor de edad (\(age_) años ) y mido más de 1.80 (\(height))")
 }
