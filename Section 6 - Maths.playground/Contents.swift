@@ -118,3 +118,29 @@ let x_value = 2.9999999
 Int(x_value)
 
 Int(pi * Float(radius_int))
+
+/*Ejercicios de castings
+Sección 6, Clase 59
+Crea una variable entera con el valor del día del mes en que naciste y otra decimal con el valor del número e del ejercicio anterior.
+Suma dichos valores y obtén un resultado con decimales.
+Suma dichos valores y obtén un resultado entero.
+¿Dan ambas soluciones el mismo valor? ¿Por qué?*/
+
+//Crea una variable entera con el valor del día del mes en que naciste y otra decimal con el valor del número e del ejercicio anterior.
+let int_dia_del_mes_que_naci: Int = 10
+
+let decimal_dia_del_mes_que_naci: Float = 10.0
+
+//Suma dichos valores y obtén un resultado con decimales.
+
+Float(int_dia_del_mes_que_naci) + decimal_dia_del_mes_que_naci
+
+//Suma dichos valores y obtén un resultado entero.
+
+int_dia_del_mes_que_naci + Int(decimal_dia_del_mes_que_naci)
+
+/*¿Dan ambas soluciones el mismo valor? ¿Por qué?
+ 
+ La razón de que de el mismo resultado tiene su razón en que el valor del día al ser un valor que en condiciones normales es entero, si le ponemos decimales es decir ".0" lo considera que es 10 a la hora de sumar
+ */
+
