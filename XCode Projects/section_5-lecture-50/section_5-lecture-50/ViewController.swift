@@ -34,8 +34,18 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         lstAlumnosLabel.text = ""
         
+        //Hide elements
+        //lstAlumnosLabel.alpha = 0
+        
         //Point focus to teacger add textfield in start
-        teacherNameInputTextField.becomeFirstResponder()
+        focusInTeacher()
+        
+        nameInputTextField.text = ""
+        
+        infoMessageAfterAddLabel.text = ""
+        teacherAccessInfoMessagesLabel.text = ""
+        
+        current_teacher = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +53,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func resetButton(_ sender: Any) {
+        viewDidLoad()
+    }
+    
     @IBAction func addTeacher(_ sender: Any) {
         var print_str:String = ""
         if (teacherNameInputTextField.text!.characters.count > 0)
@@ -91,9 +105,6 @@ class ViewController: UIViewController {
                 lstAlumnosLabel.text = text + getNameFromNameInputTextField
                 infoMessageAfterAddLabel.text = "¡¡El alumno \(getNameFromNameInputTextField) añadido correctamente!! 😀"
                 
-                //Clean and focus in students textfield
-                focusInStudent()
-                
                 print(lstAlumnosLabel.text!)
             }
             else
@@ -101,6 +112,9 @@ class ViewController: UIViewController {
                 print("No has añadido nada, anda escribe algo!! 😡")
                 infoMessageAfterAddLabel.text = "¡¡No has escrito nada!! Escribe nombres de alumnos por favor 😅"
             }
+            
+            //Clean and focus in students textfield
+            focusInStudent()
             
             showAlertMessage(_title: "Add student", _message: infoMessageAfterAddLabel.text!, _type: 2)
             
@@ -147,6 +161,7 @@ class ViewController: UIViewController {
     {
         //Point focus to teacher add textfield
         teacherNameInputTextField.becomeFirstResponder()
+        teacherNameInputTextField.text = ""
     }
     
     func focusInStudent()
