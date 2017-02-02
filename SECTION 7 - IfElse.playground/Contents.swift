@@ -102,7 +102,7 @@ else if x_dec == y_dec
 {
     print("Los dos números son iguales (\(x_dec))")
 }
-else{
+else{ //x_dec < y_dec
     print("El primer número (\(x_dec)) es menor que el segundo (\(y_dec))")
 }
 
