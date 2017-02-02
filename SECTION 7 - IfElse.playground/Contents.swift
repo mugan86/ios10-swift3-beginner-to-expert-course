@@ -86,4 +86,23 @@ if name_ != "Anartz"
     wallet += 200
 }
 
+/*
+ Ejercicio de comparación
+ Sección 7, Clase 70
+ Crea una comparación con un if que compare dos números decimales y imprima un texto en caso de que se cumpla la condición.*/
+
+let x_dec : Float = 123.43
+let y_dec : Float = 234.34
+
+if x_dec > y_dec
+{
+    print("El primer número (\(x_dec)) es mayor que el segundo (\(y_dec))")
+}
+else if x_dec == y_dec
+{
+    print("Los dos números son iguales (\(x_dec))")
+}
+else{
+    print("El primer número (\(x_dec)) es menor que el segundo (\(y_dec))")
+}
 
