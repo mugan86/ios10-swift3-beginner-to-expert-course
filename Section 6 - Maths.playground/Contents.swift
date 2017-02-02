@@ -107,3 +107,14 @@ let radius: Double = 5
 Double(pi) * radius
 
 radius
+
+//Parsear un int en float para poder multiplicar
+let radius_int: Int = 5
+
+pi * Float(radius_int)
+
+let x_value = 2.9999999
+
+Int(x_value)
+
+Int(pi * Float(radius_int))
