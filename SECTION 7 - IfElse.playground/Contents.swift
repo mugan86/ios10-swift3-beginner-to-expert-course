@@ -88,7 +88,7 @@ if name_ != "Anartz"
 
 /*
  Ejercicio de comparación
- Sección 7, Clase 70
+ Sección 7, Clase 70 / 71
  Crea una comparación con un if que compare dos números decimales y imprima un texto en caso de que se cumpla la condición.*/
 
 let x_dec : Float = 123.43
@@ -106,3 +106,18 @@ else{ //x_dec < y_dec
     print("El primer número (\(x_dec)) es menor que el segundo (\(y_dec))")
 }
 
+/*
+ Ejercicio con else
+ Sección 7, Clase 72
+ Crea un if con una variable cualquiera que elijas y asegúrate de que que incluya también un else.*/
+
+let age_: Int = 17
+
+if age_ >= 18
+{
+    print("Soy mayor de edad")
+}
+else
+{
+    print("Soy menor de edad")
+}
