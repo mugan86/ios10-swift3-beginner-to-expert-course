@@ -151,3 +151,12 @@ if height > 1.80 || age_ >= 18 //age_ = 17 / height = 1.90 TRUE OR FALSE = TRUE
 {
     print("Soy mayor de edad (\(age_) años ) y mido más de 1.80 (\(height))")
 }
+
+//EXAMEN 3
+
+//1.- true && false da como resultado -> FALSE
+//2.- true || false da como resultado -> TRUE
+//3.- true && true da como resultado  -> TRUE
+//4.- false && false da como resultado -> FALSE (FALLO)
+//5.- false || false da como resultado -> FALSE
+//6.- true || true da como resultado -> TRUE
