@@ -1,5 +1,8 @@
 //: Playground - Aritmética elemental
 
+//Para usar el framework Foundation
+import Foundation
+
 //Operaciones con enteros Section 6 - Lecture 54
 let x = 7
 let y = 5
@@ -143,4 +146,63 @@ int_dia_del_mes_que_naci + Int(decimal_dia_del_mes_que_naci)
  
  La razón de que de el mismo resultado tiene su razón en que el valor del día al ser un valor que en condiciones normales es entero, si le ponemos decimales es decir ".0" lo considera que es 10 a la hora de sumar
  */
+
+
+/**************************************************************
+ Foundation Framework
+ Section 6, Lecture 60
+ **************************************************************/
+
+var pi_value = 3.14159265
+
+Int(pi_value)
+
+floor(pi_value) //Redondear para abajo
+ceil(pi_value)  //Redondear hacia arriba
+
+sqrt(3)
+
+sqrt(4)
+
+sqrt(4.0)
+
+pow(5,3) //5^3
+
+pow(2,8)
+
+var wallet = 50
+
+wallet -= 7
+
+wallet -= 8
+
+wallet -= 10
+
+wallet -= 5
+
+wallet -= 20
+
+/*
+ Ejercicio de matemáticas
+ Sección 6, Clase 61
+ Crea una variable numérica y utilízala para hacer una potencia, una raíz, un floor, un ceil, un += y un -=.
+ */
+
+var numero_:Double = 12.344444
+
+pow(numero_, 2)     //Potencia
+
+sqrt(numero_)       //Raíz
+
+floor(numero_)      //Redondeo hacia abajo
+
+ceil(numero_)       //Redonde hacia arriba
+
+numero_ += 12.345   //Suma al valor actual
+
+numero_ -= 14.432   //Resta al valor actual
+
+
+
+
 
