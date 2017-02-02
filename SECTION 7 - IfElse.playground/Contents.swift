@@ -18,10 +18,42 @@ Crea una variable booleana isWoman, y asígnala a verdadero o falso según si er
 
 let isWoman: Bool = false
 
-if (isWoman)
+if isWoman
 {
     print("Soy mujer")
 }
-else{
+else
+{
     print("Soy hombre")
+}
+
+//Section 7 - Lecture 67
+
+let isPayDay : Bool = true
+
+var wallet : Int = 20
+
+if isPayDay
+{
+    wallet += 300
+    wallet += 250
+    wallet += 100
+}
+
+wallet += 340
+
+/*
+ Ejercicios con if
+ Sección 7, Clase 68
+ Crea un operador con un if en swift que sume 2+2 si el valor booleano de decisión es verdadero.*/
+
+let makeAddValues : Bool = true
+
+if makeAddValues
+{
+    print(2+2)
+}
+else
+{
+    print("No sumamos nada")
 }
