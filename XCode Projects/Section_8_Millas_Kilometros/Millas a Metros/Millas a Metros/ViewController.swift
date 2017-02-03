@@ -24,6 +24,33 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         conversionResultLabel.text = "Aquí se mostrará el valor del resultado"
+        
+        //Para registrar la funcion de cuando cambia el valor del textfield para evitar más de un punto o valores incorrectos
+        distanceInputTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+
+    }
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        var currentTextInInputDistanceTextField : String = textField.text!
+        let chars = currentTextInInputDistanceTextField.characters.count
+        //let lastPositionBefore = chars - 1
+        
+        print(chars)
+        
+        //Reference: http://stackoverflow.com/a/39677331
+        
+        /*if (chars >= 2)
+        {
+            let start = currentTextInInputDistanceTextField.index(currentTextInInputDistanceTextField.startIndex, offsetBy: lastPositionBefore)
+            let end = currentTextInInputDistanceTextField.index(currentTextInInputDistanceTextField.endIndex, offsetBy: chars)
+            let range = start..<end
+            
+            print(currentTextInInputDistanceTextField.substring(with: range))
+        }*/
+        
+        
+        
+        //TODO 
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,8 +61,6 @@ class ViewController: UIViewController {
    
 
     @IBAction func convertInputDistanceButton(_ sender: Any) {
-        
-        
         
         // Check for empty fields
         if distanceInputTextField.text?.isEmpty ?? true {
