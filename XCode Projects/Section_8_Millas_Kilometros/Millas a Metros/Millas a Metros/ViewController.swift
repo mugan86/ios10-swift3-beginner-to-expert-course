@@ -37,22 +37,29 @@ class ViewController: UIViewController {
         
         let select_option = typeConverterSegmentedControl.selectedSegmentIndex
         
-        print("You selected \(select_option)")
-        
-        
         let getDistanceFromDistanceInputTextField: Double = Double(distanceInputTextField.text!)!
-        
-        print(getDistanceFromDistanceInputTextField)
         
         if select_option == 0
         {
-            print("Voy a convertir a kms")
-            print(getDistanceFromDistanceInputTextField * mileUnit)
+            showResultInScreen(_output: getDistanceFromDistanceInputTextField * mileUnit, _input: getDistanceFromDistanceInputTextField)
         }
         else if select_option == 1
         {
-            print("Voy a convertir a millas")
-            print(getDistanceFromDistanceInputTextField / mileUnit)
+            showResultInScreen(_output: getDistanceFromDistanceInputTextField / mileUnit, _input: getDistanceFromDistanceInputTextField)
+        }
+    }
+    
+    func showResultInScreen(_output : Double, _input : Double)
+    {
+        var inputValue = String(format: "%.2f", _input)
+        var outputValue = String(format: "%.2f", _output)
+        
+        if typeConverterSegmentedControl.selectedSegmentIndex == 0
+        {
+            conversionResultLabel.text = "\(inputValue) millas = \(outputValue) kms";
+        }
+        else{
+            conversionResultLabel.text = "\(inputValue) kms = \(outputValue) millas";
         }
     }
 
