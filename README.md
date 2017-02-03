@@ -15,3 +15,17 @@ Por ahora, muy contento con el curso, muchas gracias Juan Gabriel (https://www.u
 Ir a dentro del proyecto al fichero **"Main.storyboard"**, click derecho con el ratón y seleccionar **"Open As.../Interface Builder"**:
 
 ![Main.StoryBoard](https://github.com/mugan86/ios10-swift3-beginner-to-expert-course/blob/master/Screens/1.png?raw=true)
+
+Diferentes tips sobre elementos del Main.StoryBoard (Layout) para comprobar, manipular,...
+
+* Obtener la longitud de un string: **count(string)**
+* Registrar el evento en un textfield cuando cambia para poder comprobar que se mete lo deseado: http://stackoverflow.com/a/28395000
+* Usar teclado númerico y decimales solo, sin carácteres: Seleccionar -> **Keyboard type: Decimal Pad**
+* Comprobar si el TextField está completamente vacio: 
+```
+if nuestroTextField.text?.isEmpty ?? true {
+            // Display alert message
+            resultado.text = "¡¡ No puedes pretender hacer una conversión sin nada enviado, prueba a escribir un número por favor !!"
+            return;
+        }
+```
