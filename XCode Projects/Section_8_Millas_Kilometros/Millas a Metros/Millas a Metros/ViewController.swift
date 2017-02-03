@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     
     @IBOutlet var conversionResultLabel: UILabel!
     
+    //Constants
+    let mileUnit : Double = 1.609
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
