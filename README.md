@@ -18,7 +18,7 @@ Ir a dentro del proyecto al fichero **"Main.storyboard"**, click derecho con el 
 
 Diferentes tips sobre elementos del Main.StoryBoard (Layout) para comprobar, manipular,...
 
-* Obtener la longitud de un string: **count(string)**
+* Obtener la longitud de un string: **string.characters.count**
 * Registrar el evento en un textfield cuando cambia para poder comprobar que se mete lo deseado: http://stackoverflow.com/a/28395000
 * Usar teclado númerico y decimales solo, sin carácteres: Seleccionar -> **Keyboard type: Decimal Pad**
 * Comprobar si el TextField está completamente vacio: 
