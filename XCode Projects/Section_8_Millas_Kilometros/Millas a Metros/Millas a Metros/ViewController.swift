@@ -35,24 +35,34 @@ class ViewController: UIViewController {
 
     @IBAction func convertInputDistanceButton(_ sender: Any) {
         
-        let select_option = typeConverterSegmentedControl.selectedSegmentIndex
         
-        let getDistanceFromDistanceInputTextField: Double = Double(distanceInputTextField.text!)!
         
-        if select_option == 0
-        {
-            showResultInScreen(_output: getDistanceFromDistanceInputTextField * mileUnit, _input: getDistanceFromDistanceInputTextField)
+        // Check for empty fields
+        if distanceInputTextField.text?.isEmpty ?? true {
+            // Display alert message
+            conversionResultLabel.text = "¡¡ No puedes pretender hacer una conversión sin nada enviado, prueba a escribir un número por favor !!"
+            return;
         }
-        else if select_option == 1
+        else
         {
-            showResultInScreen(_output: getDistanceFromDistanceInputTextField / mileUnit, _input: getDistanceFromDistanceInputTextField)
+            let select_option = typeConverterSegmentedControl.selectedSegmentIndex
+            
+            let getDistanceFromDistanceInputTextField: Double = Double(distanceInputTextField.text!)!
+            if select_option == 0
+            {
+                showResultInScreen(_output: getDistanceFromDistanceInputTextField * mileUnit, _input: getDistanceFromDistanceInputTextField)
+            }
+            else if select_option == 1
+            {
+                showResultInScreen(_output: getDistanceFromDistanceInputTextField / mileUnit, _input: getDistanceFromDistanceInputTextField)
+            }
         }
     }
     
     func showResultInScreen(_output : Double, _input : Double)
     {
-        var inputValue = String(format: "%.2f", _input)
-        var outputValue = String(format: "%.2f", _output)
+        let inputValue = String(format: "%.2f", _input)
+        let outputValue = String(format: "%.2f", _output)
         
         if typeConverterSegmentedControl.selectedSegmentIndex == 0
         {
