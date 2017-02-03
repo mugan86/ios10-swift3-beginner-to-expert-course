@@ -39,13 +39,20 @@ class ViewController: UIViewController {
         
         print("You selected \(select_option)")
         
+        
+        let getDistanceFromDistanceInputTextField: Double = Double(distanceInputTextField.text!)!
+        
+        print(getDistanceFromDistanceInputTextField)
+        
         if select_option == 0
         {
-            print("Voy a convertir a metros")
+            print("Voy a convertir a kms")
+            print(getDistanceFromDistanceInputTextField * mileUnit)
         }
         else if select_option == 1
         {
             print("Voy a convertir a millas")
+            print(getDistanceFromDistanceInputTextField / mileUnit)
         }
     }
 
