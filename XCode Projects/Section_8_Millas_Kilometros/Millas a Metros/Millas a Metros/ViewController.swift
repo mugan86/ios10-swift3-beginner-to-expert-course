@@ -10,6 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var distanceInputTextField: UITextField!
+    
+    @IBOutlet var typeConverterSegmentedControl: UISegmentedControl!
+    
+    @IBOutlet var conversionResultLabel: UILabel!
+    
+    
+    @IBAction func convertInputDistanceButton(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
