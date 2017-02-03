@@ -59,10 +59,18 @@
                                 <state key="normal" title="¡Convertir!">
                                     <color key="titleColor" red="0.039215686270000001" green="0.33725490200000002" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="convertInputDistanceButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iOP-jY-WUc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.039215686274509803" green="0.33725490196078434" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="conversionResultLabel" destination="5Dr-tH-d4d" id="xOw-Ph-nQY"/>
+                        <outlet property="distanceInputTextField" destination="G94-Hg-7av" id="Wup-ez-M7n"/>
+                        <outlet property="typeConverterSegmentedControl" destination="0x6-Wu-A51" id="XKs-tJ-ZKX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
