@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        conversionResultLabel.text = "Aquí se mostrará el valor del resultado"
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +31,19 @@ class ViewController: UIViewController {
    
 
     @IBAction func convertInputDistanceButton(_ sender: Any) {
+        
+        let select_option = typeConverterSegmentedControl.selectedSegmentIndex
+        
+        print("You selected \(select_option)")
+        
+        if select_option == 0
+        {
+            print("Voy a convertir a metros")
+        }
+        else if select_option == 1
+        {
+            print("Voy a convertir a millas")
+        }
     }
 
 }
