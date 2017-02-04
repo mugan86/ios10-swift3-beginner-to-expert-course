@@ -102,6 +102,7 @@ class ViewController: UIViewController {
             conversionResultLabel.text = "¡¡ No puedes pretender hacer una conversión sin nada enviado, prueba a escribir un número por favor !!"
             return;
         }
+        //TODO: Check if last char is point
         /*else if getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: input
 , _select_position: distanceInputTextField.text!.characters.count) == "." //Check if last char is point
         {
