@@ -68,15 +68,16 @@ class ViewController: UIViewController {
     func getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: String, _select_position: Int) -> Character
     {
         let charPos = _currentTextInInputDistanceTextField.index(_currentTextInInputDistanceTextField.startIndex, offsetBy: _select_position) // Select position
+        print(_currentTextInInputDistanceTextField + "doddoodod")
         return _currentTextInInputDistanceTextField[charPos]
     }
     
+    //Clean last point in TextField
     func cleanPointInLastPosition(_charsCount: Int, _currentTextInInputDistanceTextField: String)
     {
         print("remove last point!!")
         var newStringWithRemoveUnnecesaryPoints : String = ""
         
-        //Clean last point in TextField
         for index in 0..._charsCount - 2  {
             
             let char = getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: _currentTextInInputDistanceTextField, _select_position: index)
@@ -101,6 +102,12 @@ class ViewController: UIViewController {
             conversionResultLabel.text = "¡¡ No puedes pretender hacer una conversión sin nada enviado, prueba a escribir un número por favor !!"
             return;
         }
+        /*else if getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: input
+, _select_position: distanceInputTextField.text!.characters.count) == "." //Check if last char is point
+        {
+            print("Last char point")
+            distanceInputTextField.text = distanceInputTextField.text! + "0"
+        }*/
         else
         {
             let select_option = typeConverterSegmentedControl.selectedSegmentIndex
