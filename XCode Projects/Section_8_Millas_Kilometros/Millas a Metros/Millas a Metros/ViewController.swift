@@ -19,6 +19,10 @@ class ViewController: UIViewController {
     //Constants
     let mileUnit : Double = 1.609
     
+    //Variables
+    
+    var countPoinChars = 0;
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,25 +36,43 @@ class ViewController: UIViewController {
     
     func textFieldDidChange(_ textField: UITextField) {
         var currentTextInInputDistanceTextField : String = textField.text!
-        let chars = currentTextInInputDistanceTextField.characters.count
-        //let lastPositionBefore = chars - 1
         
-        print(chars)
-        
-        //Reference: http://stackoverflow.com/a/39677331
-        
-        /*if (chars >= 2)
+        print (currentTextInInputDistanceTextField)
+      
+        let charsCount = currentTextInInputDistanceTextField.characters.count
+        if charsCount > 0
         {
-            let start = currentTextInInputDistanceTextField.index(currentTextInInputDistanceTextField.startIndex, offsetBy: lastPositionBefore)
-            let end = currentTextInInputDistanceTextField.index(currentTextInInputDistanceTextField.endIndex, offsetBy: chars)
-            let range = start..<end
-            
-            print(currentTextInInputDistanceTextField.substring(with: range))
-        }*/
-        
-        
-        
-        //TODO 
+            var pointCount = 0;
+            var i = 0;
+            repeat {
+                let charPos = currentTextInInputDistanceTextField.index(currentTextInInputDistanceTextField.startIndex, offsetBy: i) // Select position
+                let char = currentTextInInputDistanceTextField[charPos]
+                print(char)
+                i += 1
+                if char == "."
+                {
+                    pointCount += 1
+                    print("points: \(pointCount)")
+                }
+                
+            } while i < charsCount && pointCount < 2
+            if pointCount == 2
+            {
+                print("remove last point!!")
+                var newStringWithRemoveUnnecesaryPoints : String = ""
+                //Clean last point in TextField
+                for index in 0...charsCount - 2  {
+                    print (index)
+                    let charPos = currentTextInInputDistanceTextField.index(currentTextInInputDistanceTextField.startIndex, offsetBy: index) // Select position
+                    let char = currentTextInInputDistanceTextField[charPos]
+                    print(" ..... \(char)")
+                    newStringWithRemoveUnnecesaryPoints += String(char)
+                    textField.text = newStringWithRemoveUnnecesaryPoints
+                }
+                
+            }
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
