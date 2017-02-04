@@ -38,8 +38,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //Define inputDistanceTextField change Event
-        //Para registrar la funcion de cuando cambia el valor del textfield para evitar más de un punto o valores incorrectos
+        /*Define inputDistanceTextField change Event
+        
+         Para registrar la funcion de cuando cambia el valor del
+         textfield para evitar más de un punto o valores incorrectos
+         */
         inputDistanceTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
