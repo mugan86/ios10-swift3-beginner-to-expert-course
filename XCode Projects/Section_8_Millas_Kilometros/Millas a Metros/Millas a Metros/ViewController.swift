@@ -45,9 +45,7 @@ class ViewController: UIViewController {
             var pointCount = 0;
             var i = 0;
             repeat {
-                let charPos = currentTextInInputDistanceTextField.index(currentTextInInputDistanceTextField.startIndex, offsetBy: i) // Select position
-                let char = currentTextInInputDistanceTextField[charPos]
-                print(char)
+                let char = getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: currentTextInInputDistanceTextField, _select_position: i)
                 i += 1
                 if char == "."
                 {
@@ -56,21 +54,34 @@ class ViewController: UIViewController {
                 }
                 
             } while i < charsCount && pointCount < 2
+            
+            //Only input inside if points Count == 2
             if pointCount == 2
             {
-                print("remove last point!!")
-                var newStringWithRemoveUnnecesaryPoints : String = ""
-                //Clean last point in TextField
-                for index in 0...charsCount - 2  {
-                    print (index)
-                    let charPos = currentTextInInputDistanceTextField.index(currentTextInInputDistanceTextField.startIndex, offsetBy: index) // Select position
-                    let char = currentTextInInputDistanceTextField[charPos]
-                    print(" ..... \(char)")
-                    newStringWithRemoveUnnecesaryPoints += String(char)
-                    textField.text = newStringWithRemoveUnnecesaryPoints
-                }
-                
+                cleanPointInLastPosition(_charsCount: charsCount, _currentTextInInputDistanceTextField: currentTextInInputDistanceTextField)
             }
+        }
+
+    }
+    
+    //To return last position character to check points
+    func getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: String, _select_position: Int) -> Character
+    {
+        let charPos = _currentTextInInputDistanceTextField.index(_currentTextInInputDistanceTextField.startIndex, offsetBy: _select_position) // Select position
+        return _currentTextInInputDistanceTextField[charPos]
+    }
+    
+    func cleanPointInLastPosition(_charsCount: Int, _currentTextInInputDistanceTextField: String)
+    {
+        print("remove last point!!")
+        var newStringWithRemoveUnnecesaryPoints : String = ""
+        
+        //Clean last point in TextField
+        for index in 0..._charsCount - 2  {
+            
+            let char = getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: _currentTextInInputDistanceTextField, _select_position: index)
+            newStringWithRemoveUnnecesaryPoints += String(char)
+            distanceInputTextField.text = newStringWithRemoveUnnecesaryPoints
         }
 
     }
