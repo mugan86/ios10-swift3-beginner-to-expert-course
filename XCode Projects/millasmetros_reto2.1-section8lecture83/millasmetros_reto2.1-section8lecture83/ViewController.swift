@@ -26,10 +26,71 @@ class ViewController: UIViewController {
     let mileUnit : Double = 1.609
     let yardUnit : Double = 0.00091440002926079691058
     
-
+    @IBOutlet var inputDistanceTextField: UITextField!
+    
+    @IBOutlet var fromUnitSegmentedControl: UISegmentedControl!
+    
+    @IBOutlet var toUnitSegmentedControl: UISegmentedControl!
+    
+    @IBOutlet var resultConversionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //Define inputDistanceTextField change Event
+        //Para registrar la funcion de cuando cambia el valor del textfield para evitar más de un punto o valores incorrectos
+        inputDistanceTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        var currentTextInInputDistanceTextField : String = textField.text!
+        
+        print (currentTextInInputDistanceTextField)
+        
+        let charsCount = currentTextInInputDistanceTextField.characters.count
+        if charsCount > 0
+        {
+            var pointCount = 0;
+            var i = 0;
+            repeat {
+                let char = getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: currentTextInInputDistanceTextField, _select_position: i)
+                i += 1
+                if char == "."
+                {
+                    pointCount += 1
+                }
+                
+            } while i < charsCount && pointCount < 2
+            
+            //Only input inside if points Count == 2
+            if pointCount == 2
+            {
+                cleanPointInLastPosition(_charsCount: charsCount, _currentTextInInputDistanceTextField: currentTextInInputDistanceTextField)
+            }
+        }
+        
+    }
+    
+    //To return last position character to check points
+    func getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: String, _select_position: Int) -> Character
+    {
+        let charPos = _currentTextInInputDistanceTextField.index(_currentTextInInputDistanceTextField.startIndex, offsetBy: _select_position) // Select position
+        return _currentTextInInputDistanceTextField[charPos]
+    }
+    
+    //Clean last point in TextField (To remove last position 'point' char
+    func cleanPointInLastPosition(_charsCount: Int, _currentTextInInputDistanceTextField: String)
+    {
+        var newStringWithRemoveUnnecesaryPoints : String = ""
+        
+        for index in 0..._charsCount - 2  {
+            
+            let char = getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: _currentTextInInputDistanceTextField, _select_position: index)
+            newStringWithRemoveUnnecesaryPoints += String(char)
+            inputDistanceTextField.text = newStringWithRemoveUnnecesaryPoints
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +111,19 @@ class ViewController: UIViewController {
             conversionResultLabel.text = "\(inputValue) kms = \(outputValue) millas";
         }*/
     }
+    
+    
+    
+    @IBAction func convertDistanceValueButton(_ sender: Any) {
+        
+        //Check if textfield is empty--> Show message to inform
+        //Check if last char in textfield is "." --> Remove last char and make conversion with int number
+        
+        //If value not empty, make conversion!
+        
+        
+    }
+    
 
 
 }
