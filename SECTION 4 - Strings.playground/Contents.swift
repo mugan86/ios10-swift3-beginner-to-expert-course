@@ -42,6 +42,9 @@ var 🏖 = "Me gusta la playa"
 
 print(🏖)
 
+let s = "abcdef"
 
-
-
+let charsCount = s.characters.count
+// Advance 5 from the start
+let idx = s.index(s.startIndex, offsetBy: charsCount-1) // To shos only last position
+s[idx] // → "f" (the Character, not the String)
