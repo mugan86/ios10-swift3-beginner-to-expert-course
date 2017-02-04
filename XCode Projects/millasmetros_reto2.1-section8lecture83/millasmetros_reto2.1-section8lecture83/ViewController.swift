@@ -20,6 +20,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    //Constants (en 1 km)
+    let footUnit : Double = 0.00030480000975359900633
+    let mileUnit : Double = 1.609
+    let yardUnit : Double = 0.00091440002926079691058
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +35,20 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func showResultInScreen(_output : Double, _input : Double)
+    {
+        /*let inputValue = String(format: "%.2f", _input)
+        let outputValue = String(format: "%.2f", _output)
+        
+        if typeConverterSegmentedControl.selectedSegmentIndex == 0
+        {
+            conversionResultLabel.text = "\(inputValue) millas = \(outputValue) kms";
+        }
+        else{
+            conversionResultLabel.text = "\(inputValue) kms = \(outputValue) millas";
+        }*/
     }
 
 
