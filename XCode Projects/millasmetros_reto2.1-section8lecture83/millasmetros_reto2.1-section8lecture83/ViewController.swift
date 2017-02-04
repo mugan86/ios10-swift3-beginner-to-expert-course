@@ -46,8 +46,6 @@ class ViewController: UIViewController {
     func textFieldDidChange(_ textField: UITextField) {
         var currentTextInInputDistanceTextField : String = textField.text!
         
-        print (currentTextInInputDistanceTextField)
-        
         let charsCount = currentTextInInputDistanceTextField.characters.count
         if charsCount > 0
         {
