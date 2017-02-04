@@ -19,10 +19,6 @@ class ViewController: UIViewController {
     //Constants
     let mileUnit : Double = 1.609
     
-    //Variables
-    
-    var countPoinChars = 0;
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +46,6 @@ class ViewController: UIViewController {
                 if char == "."
                 {
                     pointCount += 1
-                    print("points: \(pointCount)")
                 }
                 
             } while i < charsCount && pointCount < 2
@@ -68,14 +63,12 @@ class ViewController: UIViewController {
     func getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: String, _select_position: Int) -> Character
     {
         let charPos = _currentTextInInputDistanceTextField.index(_currentTextInInputDistanceTextField.startIndex, offsetBy: _select_position) // Select position
-        print(_currentTextInInputDistanceTextField + "doddoodod")
         return _currentTextInInputDistanceTextField[charPos]
     }
     
-    //Clean last point in TextField
+    //Clean last point in TextField (To remove last position 'point' char
     func cleanPointInLastPosition(_charsCount: Int, _currentTextInInputDistanceTextField: String)
     {
-        print("remove last point!!")
         var newStringWithRemoveUnnecesaryPoints : String = ""
         
         for index in 0..._charsCount - 2  {
@@ -102,27 +95,29 @@ class ViewController: UIViewController {
             conversionResultLabel.text = "¡¡ No puedes pretender hacer una conversión sin nada enviado, prueba a escribir un número por favor !!"
             return;
         }
-        //TODO: Check if last char is point
-        /*else if getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: input
-, _select_position: distanceInputTextField.text!.characters.count) == "." //Check if last char is point
+        
+        print(distanceInputTextField.text!)
+        let distanceInputString : String = distanceInputTextField.text!
+        let charsCountDistanceInput : Int = distanceInputString.characters.count
+        if String(getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: distanceInputTextField.text!, _select_position: charsCountDistanceInput - 1)) == "."
         {
-            print("Last char point")
-            distanceInputTextField.text = distanceInputTextField.text! + "0"
-        }*/
-        else
-        {
-            let select_option = typeConverterSegmentedControl.selectedSegmentIndex
-            
-            let getDistanceFromDistanceInputTextField: Double = Double(distanceInputTextField.text!)!
-            if select_option == 0
-            {
-                showResultInScreen(_output: getDistanceFromDistanceInputTextField * mileUnit, _input: getDistanceFromDistanceInputTextField)
-            }
-            else if select_option == 1
-            {
-                showResultInScreen(_output: getDistanceFromDistanceInputTextField / mileUnit, _input: getDistanceFromDistanceInputTextField)
-            }
+            cleanPointInLastPosition(_charsCount: charsCountDistanceInput, _currentTextInInputDistanceTextField: distanceInputString)
         }
+       
+        
+        //Mostrar el resultado según lo que queramos convertir
+        let getDistanceFromDistanceInputTextField: Double = Double(distanceInputString)!
+        let select_option = typeConverterSegmentedControl.selectedSegmentIndex
+            
+        if select_option == 0
+        {
+            showResultInScreen(_output: getDistanceFromDistanceInputTextField * mileUnit, _input: getDistanceFromDistanceInputTextField)
+        }
+        else if select_option == 1
+        {
+            showResultInScreen(_output: getDistanceFromDistanceInputTextField / mileUnit, _input: getDistanceFromDistanceInputTextField)
+        }
+        //}
     }
     
     func showResultInScreen(_output : Double, _input : Double)
