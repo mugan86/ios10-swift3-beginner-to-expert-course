@@ -116,10 +116,21 @@ class ViewController: UIViewController {
         
         //If value not empty, make conversion!
         
+        // Check for empty fields
+        if inputDistanceTextField.text?.isEmpty ?? true {
+            // Display alert message
+            resultConversionLabel.text = "¡¡ No puedes pretender hacer una conversión sin nada enviado, prueba a escribir un número por favor !!"
+            return;
+        }
         
-        
+        print(inputDistanceTextField.text!)
         let distanceInputString : String = inputDistanceTextField.text!
-        //let charsCountDistanceInput : Int = distanceInputString.characters.count
+        let charsCountDistanceInput : Int = distanceInputString.characters.count
+        if String(getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: inputDistanceTextField.text!, _select_position: charsCountDistanceInput - 1)) == "."
+        {
+            cleanPointInLastPosition(_charsCount: charsCountDistanceInput, _currentTextInInputDistanceTextField: distanceInputString)
+        }
+        
         
         let convertFrom : Int = fromUnitSegmentedControl.selectedSegmentIndex
         let convertTo : Int = toUnitSegmentedControl.selectedSegmentIndex
