@@ -85,6 +85,8 @@ class ViewController: UIViewController {
     {
         var newStringWithRemoveUnnecesaryPoints : String = ""
         
+        //Check if point and string length = 2
+        
         for index in 0..._charsCount - 2  {
             
             let char = getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: _currentTextInInputDistanceTextField, _select_position: index)
