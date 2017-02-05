@@ -101,8 +101,8 @@ class ViewController: UIViewController {
     
     func showResultInScreen(_output : Double, _input : Double, _output_unit: String, _input_unit: String)
     {
-        let inputValue = String(format: "%.3f", _input)
-        let outputValue = String(format: "%.3f", _output)
+        let inputValue = String(format: "%.2f", _input)
+        let outputValue = String(format: "%.2f", _output)
         
         resultConversionLabel.text = "\(inputValue) \(_input_unit) = \(outputValue) \(_output_unit)";
     
@@ -118,7 +118,7 @@ class ViewController: UIViewController {
         
         // Check for empty fields
         if inputDistanceTextField.text?.isEmpty ?? true {
-            // Display alert message
+            // TODO Display alert message!!!
             resultConversionLabel.text = "¡¡ No puedes pretender hacer una conversión sin nada enviado, prueba a escribir un número por favor !!"
             return;
         }
@@ -135,9 +135,10 @@ class ViewController: UIViewController {
         let convertFrom : Int = fromUnitSegmentedControl.selectedSegmentIndex
         let convertTo : Int = toUnitSegmentedControl.selectedSegmentIndex
         
-        print("\(convertFrom) - \(convertTo)")
+        
         if convertFrom == convertTo
         {
+            // TODO Show alert message
             resultConversionLabel.text = "No estás realizando la conversión correctamente, selecciona diferentes opciones"
         }
         else //Make conversion
