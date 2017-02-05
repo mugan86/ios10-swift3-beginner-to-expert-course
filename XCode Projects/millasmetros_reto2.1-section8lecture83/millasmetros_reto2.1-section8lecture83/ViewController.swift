@@ -116,6 +116,12 @@ class ViewController: UIViewController {
     
     
     @IBAction func convertDistanceValueButton(_ sender: Any) {
+        //Check if textfield is empty--> Show message to inform
+        //Check if last char in textfield is "." --> Remove last char and make conversion with int number
+        
+        //If value not empty, make conversion!
+        
+        
         
         let distanceInputString : String = inputDistanceTextField.text!
         //let charsCountDistanceInput : Int = distanceInputString.characters.count
@@ -123,6 +129,7 @@ class ViewController: UIViewController {
         let convertFrom : Int = fromUnitSegmentedControl.selectedSegmentIndex
         let convertTo : Int = toUnitSegmentedControl.selectedSegmentIndex
         
+        print("\(convertFrom) - \(convertTo)")
         if convertFrom == convertTo
         {
             resultConversionLabel.text = "No estás realizando la conversión correctamente, selecciona diferentes opciones"
@@ -132,61 +139,87 @@ class ViewController: UIViewController {
             //Mostrar el resultado según lo que queramos convertir
             let getDistanceFromDistanceInputTextField: Double = Double(distanceInputString)!
             
-            if convertFrom == 1 && convertTo == 2 //kms a millas
+            if convertFrom == 0 && convertTo == 1 //kms a millas
             {
-                print(getDistanceFromDistanceInputTextField * mileUnit)
+                print("0-1")
+                print(getMileFromKm(_km: getDistanceFromDistanceInputTextField))
             }
-            else if convertFrom == 1 && convertTo == 3 //kms a yardas
+            else if convertFrom == 0 && convertTo == 2 //kms a yardas
             {
-                print(getDistanceFromDistanceInputTextField * yardUnit)
+                print(getYardFromKm(_km: getDistanceFromDistanceInputTextField))
             }
-            else if convertFrom == 1 && convertTo == 4 //kms a pies
+            else if convertFrom == 0 && convertTo == 3 //kms a pies
             {
-                print(getDistanceFromDistanceInputTextField * footUnit)
+                print(getFootFromKm(_km: getDistanceFromDistanceInputTextField))
             }
-            else if convertFrom == 2 && convertTo == 1 //millas a kms
+            else if convertFrom == 1 && convertTo == 0 //millas a kms
             {
                 print(getDistanceFromDistanceInputTextField / mileUnit)
             }
-            else if convertFrom == 2 && convertTo == 3 //millas a yardas
+            else if convertFrom == 1 && convertTo == 2 //millas a yardas
             {
                 
             }
-            else if convertFrom == 2 && convertTo == 4 //millas a pies
+            else if convertFrom == 1 && convertTo == 3 //millas a pies
             {
                 
             }
-            else if convertFrom == 3 && convertTo == 1 //yardas a kms
+            else if convertFrom == 2 && convertTo == 0 //yardas a kms
             {
                 
             }
-            else if convertFrom == 3 && convertTo == 2 //yardas a millas
+            else if convertFrom == 2 && convertTo == 1 //yardas a millas
             {
                 
             }
-            else if convertFrom == 3 && convertTo == 4 //yardas a pies
+            else if convertFrom == 2 && convertTo == 3 //yardas a pies
             {
                 
             }
-            else if convertFrom == 4 && convertTo == 1 //pies a kms
+            else if convertFrom == 3 && convertTo == 0 //pies a kms
             {
                 
             }
-            else if convertFrom == 4 && convertTo == 2 //pies a millas
+            else if convertFrom == 3 && convertTo == 1 //pies a millas
             {
                 
             }
-            else if convertFrom == 4 && convertTo == 3 //pies a yardas
+            else if convertFrom == 3 && convertTo == 2 //pies a yardas
             {
                 
             }
         }
-        //Check if textfield is empty--> Show message to inform
-        //Check if last char in textfield is "." --> Remove last char and make conversion with int number
         
-        //If value not empty, make conversion!
-        
-        
+    }
+    
+    func getMileFromKm(_km: Double) -> Double
+    {
+        return _km / mileUnit
+    }
+    
+    func getFootFromKm(_km: Double) -> Double
+    {
+        return _km / footUnit
+    }
+    
+    func getYardFromKm(_km: Double) -> Double
+    {
+        return _km / yardUnit
+    }
+    
+    func getKmFromMile(_mile: Double) -> Double
+    {
+        return _mile * mileUnit
+    }
+    
+    func getKmFromFoot(_foot: Double) -> Double
+    {
+        return _foot * footUnit
+    }
+    
+    func getKmFromYard(_yard: Double) -> Double
+    {
+        return _yard / yardUnit
     }
     
 
