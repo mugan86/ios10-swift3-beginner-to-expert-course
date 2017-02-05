@@ -117,6 +117,70 @@ class ViewController: UIViewController {
     
     @IBAction func convertDistanceValueButton(_ sender: Any) {
         
+        let distanceInputString : String = inputDistanceTextField.text!
+        //let charsCountDistanceInput : Int = distanceInputString.characters.count
+        
+        let convertFrom : Int = fromUnitSegmentedControl.selectedSegmentIndex
+        let convertTo : Int = toUnitSegmentedControl.selectedSegmentIndex
+        
+        if convertFrom == convertTo
+        {
+            resultConversionLabel.text = "No estás realizando la conversión correctamente, selecciona diferentes opciones"
+        }
+        else //Make conversion
+        {
+            //Mostrar el resultado según lo que queramos convertir
+            let getDistanceFromDistanceInputTextField: Double = Double(distanceInputString)!
+            
+            if convertFrom == 1 && convertTo == 2 //kms a millas
+            {
+                print(getDistanceFromDistanceInputTextField * mileUnit)
+            }
+            else if convertFrom == 1 && convertTo == 3 //kms a yardas
+            {
+                print(getDistanceFromDistanceInputTextField * yardUnit)
+            }
+            else if convertFrom == 1 && convertTo == 4 //kms a pies
+            {
+                print(getDistanceFromDistanceInputTextField * footUnit)
+            }
+            else if convertFrom == 2 && convertTo == 1 //millas a kms
+            {
+                print(getDistanceFromDistanceInputTextField / mileUnit)
+            }
+            else if convertFrom == 2 && convertTo == 3 //millas a yardas
+            {
+                
+            }
+            else if convertFrom == 2 && convertTo == 4 //millas a pies
+            {
+                
+            }
+            else if convertFrom == 3 && convertTo == 1 //yardas a kms
+            {
+                
+            }
+            else if convertFrom == 3 && convertTo == 2 //yardas a millas
+            {
+                
+            }
+            else if convertFrom == 3 && convertTo == 4 //yardas a pies
+            {
+                
+            }
+            else if convertFrom == 4 && convertTo == 1 //pies a kms
+            {
+                
+            }
+            else if convertFrom == 4 && convertTo == 2 //pies a millas
+            {
+                
+            }
+            else if convertFrom == 4 && convertTo == 3 //pies a yardas
+            {
+                
+            }
+        }
         //Check if textfield is empty--> Show message to inform
         //Check if last char in textfield is "." --> Remove last char and make conversion with int number
         
