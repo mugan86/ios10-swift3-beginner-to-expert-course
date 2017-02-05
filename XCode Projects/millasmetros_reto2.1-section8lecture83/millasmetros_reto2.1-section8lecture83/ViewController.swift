@@ -154,19 +154,19 @@ class ViewController: UIViewController {
             }
             else if convertFrom == 1 && convertTo == 0 //millas a kms
             {
-                print(getDistanceFromDistanceInputTextField / mileUnit)
+                print(getKmFromMile(_mile: getDistanceFromDistanceInputTextField))
             }
             else if convertFrom == 1 && convertTo == 2 //millas a yardas
             {
-                
+                print(getMileFromKm(_km: getDistanceFromDistanceInputTextField) / yardUnit)
             }
             else if convertFrom == 1 && convertTo == 3 //millas a pies
             {
-                
+                print(getMileFromKm(_km: getDistanceFromDistanceInputTextField) / footUnit)
             }
             else if convertFrom == 2 && convertTo == 0 //yardas a kms
             {
-                
+                print(getKmFromYard(_yard: getDistanceFromDistanceInputTextField))
             }
             else if convertFrom == 2 && convertTo == 1 //yardas a millas
             {
@@ -178,7 +178,7 @@ class ViewController: UIViewController {
             }
             else if convertFrom == 3 && convertTo == 0 //pies a kms
             {
-                
+                print(getKmFromFoot(_foot: getDistanceFromDistanceInputTextField))
             }
             else if convertFrom == 3 && convertTo == 1 //pies a millas
             {
@@ -219,7 +219,7 @@ class ViewController: UIViewController {
     
     func getKmFromYard(_yard: Double) -> Double
     {
-        return _yard / yardUnit
+        return _yard * yardUnit
     }
     
 
