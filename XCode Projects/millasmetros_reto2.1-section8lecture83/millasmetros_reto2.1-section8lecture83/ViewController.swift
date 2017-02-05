@@ -99,18 +99,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func showResultInScreen(_output : Double, _input : Double)
+    func showResultInScreen(_output : Double, _input : Double, _output_unit: String, _input_unit: String)
     {
-        /*let inputValue = String(format: "%.2f", _input)
-        let outputValue = String(format: "%.2f", _output)
+        let inputValue = String(format: "%.3f", _input)
+        let outputValue = String(format: "%.3f", _output)
         
-        if typeConverterSegmentedControl.selectedSegmentIndex == 0
-        {
-            conversionResultLabel.text = "\(inputValue) millas = \(outputValue) kms";
-        }
-        else{
-            conversionResultLabel.text = "\(inputValue) kms = \(outputValue) millas";
-        }*/
+        resultConversionLabel.text = "\(inputValue) \(_input_unit) = \(outputValue) \(_output_unit)";
+    
     }
     
     
@@ -138,56 +133,84 @@ class ViewController: UIViewController {
         {
             //Mostrar el resultado según lo que queramos convertir
             let getDistanceFromDistanceInputTextField: Double = Double(distanceInputString)!
-            
+            var result : Double = 0
+            var input_unit = ""
+            var output_unit = ""
             if convertFrom == 0 && convertTo == 1 //kms a millas
             {
-                print("0-1")
-                print(getMileFromKm(_km: getDistanceFromDistanceInputTextField))
+                result = getMileFromKm(_km: getDistanceFromDistanceInputTextField)
+                input_unit = "kms"
+                output_unit = "millas"
+                
             }
             else if convertFrom == 0 && convertTo == 2 //kms a yardas
             {
-                print(getYardFromKm(_km: getDistanceFromDistanceInputTextField))
+                result = getYardFromKm(_km: getDistanceFromDistanceInputTextField)
+                input_unit = "kms"
+                output_unit = "yardas"
             }
             else if convertFrom == 0 && convertTo == 3 //kms a pies
             {
-                print(getFootFromKm(_km: getDistanceFromDistanceInputTextField))
+                result = getFootFromKm(_km: getDistanceFromDistanceInputTextField)
+                input_unit = "kms"
+                output_unit = "pies"
             }
             else if convertFrom == 1 && convertTo == 0 //millas a kms
             {
-                print(getKmFromMile(_mile: getDistanceFromDistanceInputTextField))
+                result = getKmFromMile(_mile: getDistanceFromDistanceInputTextField)
+                input_unit = "millas"
+                output_unit = "kms"
             }
             else if convertFrom == 1 && convertTo == 2 //millas a yardas
             {
-                print(getMileFromKm(_km: getDistanceFromDistanceInputTextField) / yardUnit)
+                result = getKmFromMile(_mile: getDistanceFromDistanceInputTextField) / yardUnit
+                input_unit = "millas"
+                output_unit = "yardas"
             }
             else if convertFrom == 1 && convertTo == 3 //millas a pies
             {
-                print(getMileFromKm(_km: getDistanceFromDistanceInputTextField) / footUnit)
+                result = getKmFromMile(_mile: getDistanceFromDistanceInputTextField) / footUnit
+                input_unit = "millas"
+                output_unit = "pies"
             }
             else if convertFrom == 2 && convertTo == 0 //yardas a kms
             {
-                print(getKmFromYard(_yard: getDistanceFromDistanceInputTextField))
+                result = getKmFromYard(_yard: getDistanceFromDistanceInputTextField)
+                input_unit = "yardas"
+                output_unit = "kms"
             }
             else if convertFrom == 2 && convertTo == 1 //yardas a millas
             {
-                
+                result = getKmFromYard(_yard: getDistanceFromDistanceInputTextField) / mileUnit
+                input_unit = "yardas"
+                output_unit = "millas"
             }
             else if convertFrom == 2 && convertTo == 3 //yardas a pies
             {
-                
+                result = getKmFromYard(_yard: getDistanceFromDistanceInputTextField) / footUnit
+                input_unit = "yardas"
+                output_unit = "pies"
             }
             else if convertFrom == 3 && convertTo == 0 //pies a kms
             {
-                print(getKmFromFoot(_foot: getDistanceFromDistanceInputTextField))
+                result = getKmFromFoot(_foot: getDistanceFromDistanceInputTextField)
+                input_unit = "pies"
+                output_unit = "kms"
             }
             else if convertFrom == 3 && convertTo == 1 //pies a millas
             {
-                
+                result = getKmFromFoot(_foot: getDistanceFromDistanceInputTextField) / mileUnit
+                input_unit = "pies"
+                output_unit = "millas"
             }
             else if convertFrom == 3 && convertTo == 2 //pies a yardas
             {
-                
+                result = getKmFromFoot(_foot: getDistanceFromDistanceInputTextField) / yardUnit
+                input_unit = "pies"
+                output_unit = "yardas"
             }
+            showResultInScreen(_output: result, _input: getDistanceFromDistanceInputTextField, _output_unit: output_unit, _input_unit: input_unit)
+            
         }
         
     }
