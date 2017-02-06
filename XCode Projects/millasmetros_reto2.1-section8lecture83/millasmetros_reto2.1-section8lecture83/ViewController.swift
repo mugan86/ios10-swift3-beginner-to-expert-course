@@ -87,13 +87,21 @@ class ViewController: UIViewController {
         
         //Check if point and string length = 2
         
-        for index in 0..._charsCount - 2  {
-            
-            let char = getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: _currentTextInInputDistanceTextField, _select_position: index)
-            newStringWithRemoveUnnecesaryPoints += String(char)
-            inputDistanceTextField.text = newStringWithRemoveUnnecesaryPoints
+        if (_currentTextInInputDistanceTextField.characters.count == 1)
+        {
+            focusInInputDistanceTextField()
+            showAlertMessage(_title: "Conversión erronea", _message: "No puedes realizar la conversión únicamente introduciendo un punto. Añade un número correcto por favor", _type: 2)
+            return;
         }
-        
+        else
+        {
+            for index in 0..._charsCount - 2  {
+                
+                let char = getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: _currentTextInInputDistanceTextField, _select_position: index)
+                newStringWithRemoveUnnecesaryPoints += String(char)
+                inputDistanceTextField.text = newStringWithRemoveUnnecesaryPoints
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,6 +118,11 @@ class ViewController: UIViewController {
     
     }
     
+    func focusInInputDistanceTextField()
+    {
+        inputDistanceTextField.becomeFirstResponder()
+        inputDistanceTextField.text = ""
+    }
     
     
     @IBAction func convertDistanceValueButton(_ sender: Any) {
@@ -122,13 +135,16 @@ class ViewController: UIViewController {
         if inputDistanceTextField.text?.isEmpty ?? true {
             // TODO Display alert message!!!
             /*resultConversionLabel.text = "¡¡ No puedes pretender hacer una conversión sin nada enviado, prueba a escribir un número por favor !!"*/
+            
             showAlertMessage(_title: "No es posible convertir", _message: "¡¡ No puedes pretender hacer una conversión sin nada enviado, prueba a escribir un número por favor !! 😬😅", _type: 2)
+            
+            focusInInputDistanceTextField()
             return;
         }
         
-        print(inputDistanceTextField.text!)
         let distanceInputString : String = inputDistanceTextField.text!
         let charsCountDistanceInput : Int = distanceInputString.characters.count
+        
         if String(getInputDistanceTextFieldLastChar(_currentTextInInputDistanceTextField: inputDistanceTextField.text!, _select_position: charsCountDistanceInput - 1)) == "."
         {
             cleanPointInLastPosition(_charsCount: charsCountDistanceInput, _currentTextInInputDistanceTextField: distanceInputString)
@@ -143,7 +159,10 @@ class ViewController: UIViewController {
         {
             // TODO Show alert message
             /*resultConversionLabel.text = "No estás realizando la conversión correctamente, selecciona diferentes opciones"*/
+            
             showAlertMessage(_title: "No es posible convertir", _message: "No estás realizando la conversión correctamente, selecciona diferentes opciones 😬😅", _type: 2)
+            
+            focusInInputDistanceTextField()
         }
         else //Make conversion
         {
