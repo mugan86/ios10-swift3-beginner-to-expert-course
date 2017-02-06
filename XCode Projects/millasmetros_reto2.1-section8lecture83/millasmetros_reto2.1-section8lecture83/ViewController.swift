@@ -11,10 +11,10 @@
  Sección 8, Clase 83
  Ahora que tenemos la app lista, es hora de mejorarla un poquito:
  
- Añade un segundo segmented control para elegir unidad de partida y unidad de llegada
- Modifica el código para convertir según las unidades de partida y llegada seleccionadas
- Añade un tercer ítem a cada segmented control mostrando la unidad yardas
- Modifica el código para convertir a yardas si el usuario las selecciona
+ Añade un segundo segmented control para elegir unidad de partida y unidad de llegada OK
+ Modifica el código para convertir según las unidades de partida y llegada seleccionadas OK
+ Añade un tercer ítem a cada segmented control mostrando la unidad yardas OK (se ha añadido también para convertir pies)
+ Modifica el código para convertir a yardas si el usuario las selecciona (OK)
  Refactoriza el código para hacer las transformaciones correctamente (prueba a crear una función llamada converFrom(fromUnit:, toUnit) para no repetir código innecesariamente.*/
 
 import UIKit
