@@ -121,7 +121,8 @@ class ViewController: UIViewController {
         // Check for empty fields
         if inputDistanceTextField.text?.isEmpty ?? true {
             // TODO Display alert message!!!
-            resultConversionLabel.text = "¡¡ No puedes pretender hacer una conversión sin nada enviado, prueba a escribir un número por favor !!"
+            /*resultConversionLabel.text = "¡¡ No puedes pretender hacer una conversión sin nada enviado, prueba a escribir un número por favor !!"*/
+            showAlertMessage(_title: "No es posible convertir", _message: "¡¡ No puedes pretender hacer una conversión sin nada enviado, prueba a escribir un número por favor !! 😬😅", _type: 2)
             return;
         }
         
@@ -141,7 +142,8 @@ class ViewController: UIViewController {
         if convertFrom == convertTo
         {
             // TODO Show alert message
-            resultConversionLabel.text = "No estás realizando la conversión correctamente, selecciona diferentes opciones"
+            /*resultConversionLabel.text = "No estás realizando la conversión correctamente, selecciona diferentes opciones"*/
+            showAlertMessage(_title: "No es posible convertir", _message: "No estás realizando la conversión correctamente, selecciona diferentes opciones 😬😅", _type: 2)
         }
         else //Make conversion
         {
@@ -257,6 +259,33 @@ class ViewController: UIViewController {
     func getKmFromYard(_yard: Double) -> Double
     {
         return _yard * yardUnit
+    }
+    
+    func showAlertMessage(_title:String, _message:String, _type: Int)
+    {
+        //Configuration to alert Controller with title, message and use prefered style
+        let alertController: UIAlertController =
+            UIAlertController(title: _title,
+                              message: _message,
+                              preferredStyle: .alert)
+        
+        //Add action button to close alert Controller after show in app
+        //style: default = OK in blue default color / destructive (red color)
+        
+        let okAlertButton: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        //Add action after configure to use in alertController
+        alertController.addAction(okAlertButton)
+        
+        if (_type == 1)
+        {
+            let cancelAlertButton: UIAlertAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+            
+            alertController.addAction(cancelAlertButton)
+        }
+        
+        //Show Alert controller with alertControllerUI elements and OK action
+        present(alertController, animated: true, completion: nil)
     }
     
 
