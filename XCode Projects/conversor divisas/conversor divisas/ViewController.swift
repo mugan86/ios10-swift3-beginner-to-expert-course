@@ -13,8 +13,8 @@ class ViewController: UIViewController {
 
     //1 euro in other divises
     //Info extract from https://conversormoneda.com/
-    let bitCoinUnit : Double = 0.0011
-    let dollarUnit : Double = 1.08
+    let bitCoinUnit : Double = 0.00105378
+    let dollarUnit : Double = 1.07438
     let libraUnit : Double = 0.86
     let yenUnit : Double = 121.29
     
@@ -69,6 +69,7 @@ class ViewController: UIViewController {
     @IBAction func convertCoinInOthersButton(_ sender: Any) {
         //Check if input is empty
         //Check if last char in textfield is "point"
+        convertMoney(_value: inputCoinTextField.text!, _money: coinSelectionSegmentedControl.selectedSegmentIndex)
     }
     
     func showAlertMessage(_title:String, _message:String, _type: Int)
@@ -102,7 +103,79 @@ class ViewController: UIViewController {
     {
         inputCoinTextField.becomeFirstResponder()
     }
-
+    
+    func convertMoney (_value: String, _money : Int)
+    {
+        let convertValue : Double = Double(_value)!
+        if _money == 0
+        {
+            //FROM Euro to others
+            print(_value + " €:")
+            print("=============================")
+            print(convertValue * dollarUnit)
+            print(convertValue * libraUnit)
+            print(convertValue * yenUnit)
+            print(convertValue * bitCoinUnit)
+        }
+        else if _money == 1
+        {
+            //FROM Dollars to others
+            print(_value + " $:")
+            print("=============================")
+            print(getMoneyToEuroConversion(_value: convertValue, _money: 1))
+            print(getMoneyToEuroConversion(_value: convertValue, _money: 1) * libraUnit)
+            print(getMoneyToEuroConversion(_value: convertValue, _money: 1) * yenUnit)
+            print(getMoneyToEuroConversion(_value: convertValue, _money: 1) * bitCoinUnit)
+        }
+        else if _money == 2
+        {
+            //FROM Euro to others
+            print(_value + " Libra:")
+            print("=============================")
+            print(getMoneyToEuroConversion(_value: convertValue, _money: 2))
+            print(getMoneyToEuroConversion(_value: convertValue, _money: 2) * dollarUnit)
+            print(getMoneyToEuroConversion(_value: convertValue, _money: 2) * yenUnit)
+            print(getMoneyToEuroConversion(_value: convertValue, _money: 2) * bitCoinUnit)
+        }
+        else if _money == 3
+        {
+            //FROM Euro to others
+            print(_value + " Yen:")
+            print("=============================")
+            print(getMoneyToEuroConversion(_value: convertValue, _money: 3))
+            print(getMoneyToEuroConversion(_value: convertValue, _money: 3) * dollarUnit)
+            print(getMoneyToEuroConversion(_value: convertValue, _money: 3) * libraUnit)
+            print(getMoneyToEuroConversion(_value: convertValue, _money: 3) * bitCoinUnit)
+        }
+        else if _money == 4
+        {
+            //FROM Euro to others
+            print(_value + " Bitcoin:")
+            print("=============================")
+            print(getMoneyToEuroConversion(_value: convertValue, _money: 4))
+            print(getMoneyToEuroConversion(_value: convertValue, _money: 4) * dollarUnit)
+            print(getMoneyToEuroConversion(_value: convertValue, _money: 4) * libraUnit)
+            print(getMoneyToEuroConversion(_value: convertValue, _money: 4) * yenUnit)
+        }
+        
+    }
+    
+    func getMoneyToEuroConversion(_value : Double, _money: Int)-> Double
+    {
+        if _money == 1 //Dollar
+        {
+            return _value / dollarUnit
+        }
+        else if _money == 2 //libra
+        {
+            return _value / libraUnit
+        }
+        if _money == 3 //Yen
+        {
+            return _value / yenUnit
+        }
+        return _value / bitCoinUnit //Return Bitcoin in euros
+    }
     
    
 
