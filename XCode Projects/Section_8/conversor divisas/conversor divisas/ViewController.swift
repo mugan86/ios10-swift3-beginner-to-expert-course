@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var selectionCoinLabel: UILabel!
     
+    @IBOutlet var conversionResultLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -107,56 +108,91 @@ class ViewController: UIViewController {
     func convertMoney (_value: String, _money : Int)
     {
         let convertValue : Double = Double(_value)!
+        var tempText = ""
         if _money == 0
         {
             //FROM Euro to others
             print(_value + " €:")
             print("=============================")
-            print(convertValue * dollarUnit)
-            print(convertValue * libraUnit)
-            print(convertValue * yenUnit)
-            print(convertValue * bitCoinUnit)
+            selectionCoinLabel.text = "Quieres convertir \(_value) €"
+            let dollar = convertValue * dollarUnit
+            let libra = convertValue * libraUnit
+            let  yen = convertValue * yenUnit
+            let bitCoin = convertValue * bitCoinUnit
+            
+            tempText = String(dollar) + " $.\r\n"
+            tempText = tempText + String(libra) + " libra esterlina.\r\n"
+            tempText = tempText + String(yen) + " yens.\r\n"
+            tempText = tempText + String(bitCoin) + " bit coins.\r\n"
+            print (tempText)
         }
         else if _money == 1
         {
             //FROM Dollars to others
             print(_value + " $:")
+            selectionCoinLabel.text = "Quieres convertir \(_value) $"
             print("=============================")
-            print(getMoneyToEuroConversion(_value: convertValue, _money: 1))
-            print(getMoneyToEuroConversion(_value: convertValue, _money: 1) * libraUnit)
-            print(getMoneyToEuroConversion(_value: convertValue, _money: 1) * yenUnit)
-            print(getMoneyToEuroConversion(_value: convertValue, _money: 1) * bitCoinUnit)
+            let euro = getMoneyToEuroConversion(_value: convertValue, _money: 1)
+            let libra = getMoneyToEuroConversion(_value: convertValue, _money: 1) * libraUnit
+            let yen = getMoneyToEuroConversion(_value: convertValue, _money: 1) * yenUnit
+            let bitCoin = getMoneyToEuroConversion(_value: convertValue, _money: 1) * bitCoinUnit
+            
+            tempText = String(euro) + " €.\r\n"
+            tempText = tempText + String(libra) + " libra esterlina.\r\n"
+            tempText = tempText + String(yen) + " yens.\r\n"
+            tempText = tempText + String(bitCoin) + " bit coins.\r\n"
         }
         else if _money == 2
         {
             //FROM Euro to others
             print(_value + " Libra:")
+            selectionCoinLabel.text = "Quieres convertir \(_value) libras"
             print("=============================")
-            print(getMoneyToEuroConversion(_value: convertValue, _money: 2))
-            print(getMoneyToEuroConversion(_value: convertValue, _money: 2) * dollarUnit)
-            print(getMoneyToEuroConversion(_value: convertValue, _money: 2) * yenUnit)
-            print(getMoneyToEuroConversion(_value: convertValue, _money: 2) * bitCoinUnit)
+            let euro = getMoneyToEuroConversion(_value: convertValue, _money: 2)
+            let dollar = getMoneyToEuroConversion(_value: convertValue, _money: 2) * dollarUnit
+            let yen = getMoneyToEuroConversion(_value: convertValue, _money: 2) * yenUnit
+            let bitCoin = getMoneyToEuroConversion(_value: convertValue, _money: 2) * bitCoinUnit
+            
+            tempText = String(euro) + " €.\r\n"
+            tempText = tempText + String(dollar) + " $.\r\n"
+            tempText = tempText + String(yen) + " yens.\r\n"
+            tempText = tempText + String(bitCoin) + " bit coins.\r\n"
         }
         else if _money == 3
         {
             //FROM Euro to others
             print(_value + " Yen:")
+            selectionCoinLabel.text = "Quieres convertir \(_value) Yens"
             print("=============================")
-            print(getMoneyToEuroConversion(_value: convertValue, _money: 3))
-            print(getMoneyToEuroConversion(_value: convertValue, _money: 3) * dollarUnit)
-            print(getMoneyToEuroConversion(_value: convertValue, _money: 3) * libraUnit)
-            print(getMoneyToEuroConversion(_value: convertValue, _money: 3) * bitCoinUnit)
+            let euro = getMoneyToEuroConversion(_value: convertValue, _money: 3)
+            let dollar = getMoneyToEuroConversion(_value: convertValue, _money: 3) * dollarUnit
+            let libra = getMoneyToEuroConversion(_value: convertValue, _money: 3) * libraUnit
+            let bitCoin = getMoneyToEuroConversion(_value: convertValue, _money: 3) * bitCoinUnit
+            
+            tempText = String(euro) + " €.\r\n"
+            tempText = tempText + String(dollar) + " $.\r\n"
+            tempText = tempText + String(libra) + " libra esterlina.\r\n"
+            tempText = tempText + String(bitCoin) + " bit coins.\r\n"
         }
         else if _money == 4
         {
             //FROM Euro to others
             print(_value + " Bitcoin:")
+            selectionCoinLabel.text = "Quieres convertir \(_value) Bitcoins"
             print("=============================")
-            print(getMoneyToEuroConversion(_value: convertValue, _money: 4))
-            print(getMoneyToEuroConversion(_value: convertValue, _money: 4) * dollarUnit)
-            print(getMoneyToEuroConversion(_value: convertValue, _money: 4) * libraUnit)
-            print(getMoneyToEuroConversion(_value: convertValue, _money: 4) * yenUnit)
+            let euro = getMoneyToEuroConversion(_value: convertValue, _money: 4)
+            let dollar = getMoneyToEuroConversion(_value: convertValue, _money: 4) * dollarUnit
+            let libra = getMoneyToEuroConversion(_value: convertValue, _money: 4) * libraUnit
+            let yen = getMoneyToEuroConversion(_value: convertValue, _money: 4) * yenUnit
+            
+            tempText = String(euro) + " €.\r\n"
+            tempText = tempText + String(dollar) + " $.\r\n"
+            tempText = tempText + String(libra) + " libra esterlina.\r\n"
+            tempText = tempText + String(yen) + " yens.\r\n"
         }
+        conversionResultLabel.text = tempText
+        
+        
         
     }
     
