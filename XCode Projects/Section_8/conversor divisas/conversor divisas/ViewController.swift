@@ -28,8 +28,40 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        /*Define inputDistanceTextField change Event
+         
+         Para registrar la funcion de cuando cambia el valor del
+         textfield para evitar más de un punto o valores incorrectos
+         */
+        inputCoinTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
     }
-    
+    func textFieldDidChange(_ textField: UITextField) {
+        var currentTextInInputDistanceTextField : String = textField.text!
+        
+        let charsCount = currentTextInInputDistanceTextField.characters.count
+        if charsCount > 0
+        {
+            var pointCount = 0;
+            var i = 0;
+            repeat {
+                let char = getInputDistanceTextFieldLastChar(_currentTextInInputTextField: currentTextInInputDistanceTextField, _select_position: i)
+                i += 1
+                if char == "."
+                {
+                    pointCount += 1
+                }
+                
+            } while i < charsCount && pointCount < 2
+            
+            //Only input inside if points Count == 2
+            if pointCount == 2
+            {
+                cleanPointInLastPosition(_charsCount: charsCount, _currentTextInInputDistanceTextField: currentTextInInputDistanceTextField)
+            }
+        }
+        
+    }
     //To return last position character to check points
     func getInputDistanceTextFieldLastChar(_currentTextInInputTextField: String, _select_position: Int) -> Character
     {
@@ -69,8 +101,34 @@ class ViewController: UIViewController {
 
     @IBAction func convertCoinInOthersButton(_ sender: Any) {
         //Check if input is empty
-        //Check if last char in textfield is "point"
-        convertMoney(_value: inputCoinTextField.text!, _money: coinSelectionSegmentedControl.selectedSegmentIndex)
+        // Check for empty fields
+        if inputCoinTextField.text?.isEmpty ?? true {
+            // TODO Display alert message!!!
+            /*resultConversionLabel.text = "¡¡ No puedes pretender hacer una conversión sin nada enviado, prueba a escribir un número por favor !!"*/
+            
+            showAlertMessage(_title: "No es posible convertir", _message: "¡¡ No puedes pretender hacer una conversión sin nada enviado, prueba a escribir un número por favor !! 😬😅", _type: 2)
+            
+            focusInInput()
+            return;
+        }
+        
+        let distanceInputString : String = inputCoinTextField.text!
+        let charsCountDistanceInput : Int = distanceInputString.characters.count
+        print(distanceInputString)
+        
+        if String(getInputDistanceTextFieldLastChar(_currentTextInInputTextField: inputCoinTextField.text!, _select_position: charsCountDistanceInput - 1)) == "."
+        {
+            cleanPointInLastPosition(_charsCount: charsCountDistanceInput, _currentTextInInputDistanceTextField: distanceInputString)
+            inputCoinTextField.text=""
+            focusInInput()
+        }
+        else
+        {
+            //Check if last char in textfield is "point"
+            convertMoney(_value: inputCoinTextField.text!, _money: coinSelectionSegmentedControl.selectedSegmentIndex)
+
+        }
+        
     }
     
     func showAlertMessage(_title:String, _message:String, _type: Int)
@@ -153,15 +211,15 @@ class ViewController: UIViewController {
             print(_value + " Libra:")
             selectionCoinLabel.text = "Quieres convertir \(_value) libras"
             print("=============================")
-            let euro = getMoneyToEuroConversion(_value: convertValue, _money: 2)
-            let dollar = getMoneyToEuroConversion(_value: convertValue, _money: 2) * dollarUnit
-            let yen = getMoneyToEuroConversion(_value: convertValue, _money: 2) * yenUnit
-            let bitCoin = getMoneyToEuroConversion(_value: convertValue, _money: 2) * bitCoinUnit
+            let euro = roundResultWithTwoDecimals( _result: getMoneyToEuroConversion(_value: convertValue, _money: 2))
+            let dollar = roundResultWithTwoDecimals( _result: getMoneyToEuroConversion(_value: convertValue, _money: 2) * dollarUnit)
+            let yen = roundResultWithTwoDecimals( _result: getMoneyToEuroConversion(_value: convertValue, _money: 2) * yenUnit)
+            let bitCoin = roundResultWithTwoDecimals( _result: getMoneyToEuroConversion(_value: convertValue, _money: 2) * bitCoinUnit)
             
             tempText = String(euro) + " €.\r\n"
             tempText = tempText + String(dollar) + " $.\r\n"
             tempText = tempText + String(yen) + " yens.\r\n"
-            tempText = tempText + String(bitCoin) + " bit coins.\r\n"
+            tempText = tempText + String(bitCoin) + " bit coins."
         }
         else if _money == 3
         {
@@ -169,15 +227,15 @@ class ViewController: UIViewController {
             print(_value + " Yen:")
             selectionCoinLabel.text = "Quieres convertir \(_value) Yens"
             print("=============================")
-            let euro = getMoneyToEuroConversion(_value: convertValue, _money: 3)
-            let dollar = getMoneyToEuroConversion(_value: convertValue, _money: 3) * dollarUnit
-            let libra = getMoneyToEuroConversion(_value: convertValue, _money: 3) * libraUnit
-            let bitCoin = getMoneyToEuroConversion(_value: convertValue, _money: 3) * bitCoinUnit
+            let euro = roundResultWithTwoDecimals( _result: getMoneyToEuroConversion(_value: convertValue, _money: 3))
+            let dollar = roundResultWithTwoDecimals( _result: getMoneyToEuroConversion(_value: convertValue, _money: 3) * dollarUnit)
+            let libra = roundResultWithTwoDecimals( _result: getMoneyToEuroConversion(_value: convertValue, _money: 3) * libraUnit)
+            let bitCoin = roundResultWithTwoDecimals( _result: getMoneyToEuroConversion(_value: convertValue, _money: 3) * bitCoinUnit)
             
             tempText = String(euro) + " €.\r\n"
             tempText = tempText + String(dollar) + " $.\r\n"
             tempText = tempText + String(libra) + " libra esterlina.\r\n"
-            tempText = tempText + String(bitCoin) + " bit coins.\r\n"
+            tempText = tempText + String(bitCoin) + " bit coins."
         }
         else if _money == 4
         {
@@ -185,10 +243,10 @@ class ViewController: UIViewController {
             print(_value + " Bitcoin:")
             selectionCoinLabel.text = "Quieres convertir \(_value) Bitcoins"
             print("=============================")
-            let euro = getMoneyToEuroConversion(_value: convertValue, _money: 4)
-            let dollar = getMoneyToEuroConversion(_value: convertValue, _money: 4) * dollarUnit
-            let libra = getMoneyToEuroConversion(_value: convertValue, _money: 4) * libraUnit
-            let yen = getMoneyToEuroConversion(_value: convertValue, _money: 4) * yenUnit
+            let euro = roundResultWithTwoDecimals( _result:getMoneyToEuroConversion(_value: convertValue, _money: 4))
+            let dollar = roundResultWithTwoDecimals( _result:getMoneyToEuroConversion(_value: convertValue, _money: 4) * dollarUnit)
+            let libra = roundResultWithTwoDecimals( _result:getMoneyToEuroConversion(_value: convertValue, _money: 4) * libraUnit)
+            let yen = roundResultWithTwoDecimals( _result:getMoneyToEuroConversion(_value: convertValue, _money: 4) * yenUnit)
             
             tempText = String(euro) + " €.\r\n"
             tempText = tempText + String(dollar) + " $.\r\n"
