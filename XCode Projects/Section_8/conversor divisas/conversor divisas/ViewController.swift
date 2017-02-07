@@ -105,6 +105,11 @@ class ViewController: UIViewController {
         inputCoinTextField.becomeFirstResponder()
     }
     
+    func roundResultWithTwoDecimals(_result : Double) -> String
+    {
+        return String(format: "%.2f", _result)
+    }
+    
     func convertMoney (_value: String, _money : Int)
     {
         let convertValue : Double = Double(_value)!
@@ -115,15 +120,15 @@ class ViewController: UIViewController {
             print(_value + " €:")
             print("=============================")
             selectionCoinLabel.text = "Quieres convertir \(_value) €"
-            let dollar = convertValue * dollarUnit
-            let libra = convertValue * libraUnit
-            let  yen = convertValue * yenUnit
-            let bitCoin = convertValue * bitCoinUnit
+            let dollar = roundResultWithTwoDecimals(_result: convertValue * dollarUnit)
+            let libra = roundResultWithTwoDecimals(_result: convertValue * libraUnit)
+            let  yen = roundResultWithTwoDecimals(_result: convertValue * yenUnit)
+            let bitCoin = roundResultWithTwoDecimals(_result: convertValue * bitCoinUnit)
             
-            tempText = String(dollar) + " $.\r\n"
-            tempText = tempText + String(libra) + " libra esterlina.\r\n"
-            tempText = tempText + String(yen) + " yens.\r\n"
-            tempText = tempText + String(bitCoin) + " bit coins.\r\n"
+            tempText = dollar + " $.\r\n"
+            tempText = tempText + libra + " libra esterlina.\r\n"
+            tempText = tempText + yen + " yens.\r\n"
+            tempText = tempText + bitCoin + " bit coins.\r\n"
             print (tempText)
         }
         else if _money == 1
@@ -132,10 +137,10 @@ class ViewController: UIViewController {
             print(_value + " $:")
             selectionCoinLabel.text = "Quieres convertir \(_value) $"
             print("=============================")
-            let euro = getMoneyToEuroConversion(_value: convertValue, _money: 1)
-            let libra = getMoneyToEuroConversion(_value: convertValue, _money: 1) * libraUnit
-            let yen = getMoneyToEuroConversion(_value: convertValue, _money: 1) * yenUnit
-            let bitCoin = getMoneyToEuroConversion(_value: convertValue, _money: 1) * bitCoinUnit
+            let euro = roundResultWithTwoDecimals(_result: getMoneyToEuroConversion(_value: convertValue, _money: 1))
+            let libra = roundResultWithTwoDecimals(_result: getMoneyToEuroConversion(_value: convertValue, _money: 1) * libraUnit)
+            let yen = roundResultWithTwoDecimals(_result: getMoneyToEuroConversion(_value: convertValue, _money: 1) * yenUnit)
+            let bitCoin = roundResultWithTwoDecimals(_result: getMoneyToEuroConversion(_value: convertValue, _money: 1) * bitCoinUnit)
             
             tempText = String(euro) + " €.\r\n"
             tempText = tempText + String(libra) + " libra esterlina.\r\n"
