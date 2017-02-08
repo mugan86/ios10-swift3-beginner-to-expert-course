@@ -1,7 +1,7 @@
 //Playground - Switch
 let mark = "F"
 
-if mark == "A"
+/*if mark == "A"
 {
     print("Genial! Eres un crack!")
 }
@@ -24,7 +24,7 @@ if mark == "D"
 if mark == "F"
 {
     print("Tendrás que estudiar más")
-}
+}*/
 
 switch mark {
     case "A":
@@ -41,3 +41,4 @@ switch mark {
     print("La nota no es correcta")
     
 }
+
