@@ -85,3 +85,45 @@ switch char{
     default:
         print("No es una vocal")
 }
+
+let speed : Int = 100
+
+switch speed{
+    case 0...60:
+        print("Vamos demasiado despacio para ir en autopista")
+    case 61...100:
+        print("Velocidad crucero")
+    case 101...120:
+        print("Velocidad considerable, hay que ir atento")
+    default:
+        print("Te has pasado el límite de velocidad")
+}
+
+/*Crea un switch que tome un entero por parámetro. Si el número es 2, 3, 5 o 7 imprime "Número primo". Asegúrate de no poner 4 casos!!
+ Crea un switch para las horas del día en formato 24 horas. Utiliza varios casos para poder decir si estamos en el amanecer, mañana, mediodía, tarde, noche.*/
+
+let valor_entero : Int = 2
+
+switch valor_entero{
+case 2,3,5,7:
+    print("Número primo!")
+default:
+    print("Número que no es primo")
+}
+
+let hora_del_dia : Int = 20
+
+switch hora_del_dia{
+    case 0...6, 21...24:
+        print("Noche")
+    case 7:
+        print("Amanecer")
+    case 8...12:
+        print("Mañana")
+    case 13...14:
+        print("Mediodia")
+    case 15...20:
+        print("Tarde")
+    default:
+        print("No se ha especificado correctamente la hora")
+}
