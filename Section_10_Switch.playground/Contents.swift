@@ -75,3 +75,13 @@ switch dayOfTheWeek
     
 }
 
+//Multiples opciones en un case (SECTION 10 - LECTURE 99
+
+let char : Character = "2"
+
+switch char{
+    case "a", "e", "i", "o", "u":
+        print("Es una vocal")
+    default:
+        print("No es una vocal")
+}
