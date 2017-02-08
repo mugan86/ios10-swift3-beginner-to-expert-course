@@ -42,3 +42,30 @@ switch mark {
     
 }
 
+/*
+ Crea un string llamado dayOfTheWeek y configúralo para que tome el valor Lunes. A continuación utiliza un Switch para imprimir cuantos días faltan para el Viernes en función del valor de dicho String.*/
+
+
+let dayOfTheWeek : String = "Lunes"
+
+
+switch dayOfTheWeek
+{
+    case "Lunes":
+        print("Faltan 4 días para el viernes!")
+    case "Martes":
+        print("Faltan 3 días para el viernes!")
+    case "Miércoles":
+        print("Faltan 2 días para el viernes!")
+    case "Jueves":
+        print("Faltan 1 días para el viernes!")
+    case "Viernes":
+        print("Hoy es viernes!")
+    case "Sábado":
+        print("Faltan 6 días para el viernes!")
+    case "Domingo":
+        print("Faltan 5 días para el viernes!")
+    default:
+        print("Has introducido el día incorrecto")
+    
+}
