@@ -91,11 +91,11 @@ print(shoppingList)
  
  ************************************************************************************/
 
-favoriteFoods[2] = "Brócoli"
+favoriteFoods[3] = "Brócoli"
 
 print(favoriteFoods)
 
-telephoneNumbers[1] = 555123456
+telephoneNumbers[2] = 555123456
 
 print(telephoneNumbers)
 
@@ -111,3 +111,18 @@ print(shoppingList)
 shoppingList.remove(at: 3)
 
 print(shoppingList)
+
+/*************************************************************************************
+ 
+ Ejercicios de inserción y borrado de elementos de arrays
+ Sección 12, Clase 122
+ Insertad las "Zanahorias" en la posición número 3 del array, para que esté delante del brócoli del ejercicio anterior.
+ Eliminad el número en la posición número 2 del array de teléfonos, el que habíamos puesto anteriormente.
+ ************************************************************************************/
+
+
+favoriteFoods.insert("Zanahorias", at: 3)
+
+telephoneNumbers.remove(at: 2)
+
+print(telephoneNumbers)
