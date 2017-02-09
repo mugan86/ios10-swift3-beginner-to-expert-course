@@ -98,3 +98,16 @@ print(favoriteFoods)
 telephoneNumbers[1] = 555123456
 
 print(telephoneNumbers)
+
+//SECTION 12 Lecture 121 - Inserción / Borrado elementos array
+
+//Add in set position element
+shoppingList.insert("Brócoli", at:2)
+
+print(shoppingList)
+
+//Remove specific position element
+
+shoppingList.remove(at: 3)
+
+print(shoppingList)
