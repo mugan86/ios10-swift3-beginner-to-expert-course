@@ -56,3 +56,45 @@ telephoneNumbers.append(943762838)
 
 //4/
 telephoneNumbers.count
+
+//LECTURE 119 Access to array info
+
+print(shoppingList)
+
+print(shoppingList.first)
+
+print(shoppingList.last)
+
+print(shoppingList.first!)
+
+print(shoppingList.last!)
+
+shoppingList[0]
+
+shoppingList[1]
+
+shoppingList[2]
+
+shoppingList[shoppingList.count - 1] //Last element = shoppingList.last!
+
+shoppingList[5] = "Pepsi-Cola"
+
+print(shoppingList)
+
+
+/*************************************************************************************
+ 
+ Ejercicios sobre acceso y modificación de elementos de un array
+ Sección 12, Clase 120
+ Modifica la comida en la posición 2 del array de comidas favoritas y añade "Brócoli". (¿¿¿¿Acaso el brócoli no es tu comida favorita????)
+ Modifica el segundo número de teléfono y pon el número 555123456.
+ 
+ ************************************************************************************/
+
+favoriteFoods[2] = "Brócoli"
+
+print(favoriteFoods)
+
+telephoneNumbers[1] = 555123456
+
+print(telephoneNumbers)
