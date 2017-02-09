@@ -36,3 +36,23 @@ luckyNumbers.append(23)
 
 luckyNumbers.count
 
+/*
+ 
+ Ejercicios para añadir objetos a arrays
+ Sección 12, Clase 118
+ 1.- Añade una comida más al array anterior de favoriteFoods
+ 2.- Cuenta cuantos elementos tiene ahora ese array
+ 3.- Añade un número de teléfono más al array anterior
+ 4.- Cuenta cuantos elementos tiene ahora el array de número de teléfono*/
+
+//1/
+favoriteFoods.append("Wine")
+
+//2/
+favoriteFoods.count
+
+//3/
+telephoneNumbers.append(943762838)
+
+//4/
+telephoneNumbers.count
