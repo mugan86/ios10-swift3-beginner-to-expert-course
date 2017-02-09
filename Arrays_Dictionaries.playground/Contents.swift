@@ -126,3 +126,4 @@ favoriteFoods.insert("Zanahorias", at: 3)
 telephoneNumbers.remove(at: 2)
 
 print(telephoneNumbers)
+
