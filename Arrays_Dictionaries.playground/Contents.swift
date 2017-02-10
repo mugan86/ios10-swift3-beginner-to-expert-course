@@ -127,3 +127,31 @@ telephoneNumbers.remove(at: 2)
 
 print(telephoneNumbers)
 
+
+//Consultar existencia y posición en un array SECTION 12 - LECTURE 123
+
+shoppingList.index(of:"Patata")
+
+if shoppingList.contains("Pan")
+{
+    let index = shoppingList.index(of: "Pan")
+    shoppingList.remove(at: index!)
+}
+print ("Después de quitar el pan en la dieta: \(shoppingList)")
+
+
+/******************************************************************************************
+ Ejercicios de consulta sobre arrays
+ Sección 12, Clase 124
+ Consulta la existencia de "Zanahorias" dentro del array de comidas favoritas anterior.
+ Extrae la posición de las "Zanahorias" en caso de que exista esta en tus comidas favoritas.
+ *****************************************************************************************/
+
+
+if favoriteFoods.contains("Zanahorias"){
+    favoriteFoods.remove(at: favoriteFoods.index(of: "Zanahorias")!)
+}
+
+print ("Después de quitar la zanahoria en la dieta: \(favoriteFoods)")
+
+
