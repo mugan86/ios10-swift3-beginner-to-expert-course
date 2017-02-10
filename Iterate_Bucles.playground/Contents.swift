@@ -62,3 +62,37 @@ for var i in 1...10
 {
     print("2^\(i)= \(pow(2,i))")
 }
+
+
+
+//SECTION 15 LECTURE 151 While bucle
+
+//De más a menos (descontar) con un break para dejar de mostrar
+for var i in (1...10).reversed() //de 1 a 10 (incluido)
+{
+    print("La variable i vale: \(i)")
+    
+    if i == 4
+    {
+        break
+    }
+}
+
+print("***************************************")
+
+//While example
+
+var i = 0
+
+var found = false
+
+while !found
+{
+    i = i + 1
+    
+    if i % 5 == 0 && i % 7 == 0 && i > 7
+    {
+        found = true
+        print("\(i) es multiplo de 7 y de 5")
+    }
+}
