@@ -155,3 +155,16 @@ if favoriteFoods.contains("Zanahorias"){
 print ("Después de quitar la zanahoria en la dieta: \(favoriteFoods)")
 
 
+//EXTRA ARRAYS - SECTION 5 LECTURE 125
+
+//Append many elements with +=
+
+shoppingList += ["Chuletas", "Lechuga", "Salmón"]
+
+shoppingList[shoppingList.count - 1]
+shoppingList[shoppingList.count - 2]
+shoppingList[shoppingList.count - 3]
+
+//Show last 3 articles
+shoppingList[shoppingList.count - 3...shoppingList.count-1]
+
