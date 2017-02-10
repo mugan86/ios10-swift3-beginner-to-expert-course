@@ -96,3 +96,48 @@ while !found
         print("\(i) es multiplo de 7 y de 5")
     }
 }
+
+/*************************************************************************************
+ Ejercicios de bucle while
+ Sección 15, Clase 152
+ Se dice que un número x es divisible por otro número y cuando el resto de la división de x entre y da cero, es decir x es divisible por y si x%y==0.
+ 
+ Crea un programa que declare una variable entera requerida x.
+ Crea una segunda variable entera requerida y e iníciala en 2
+ Cree una variable booleana esDivisible que inicialmente sea falsa
+ Haz un bucle while que se ejecute mientras y sea menor estricto que x y a la vez no hayamos encontrado ningún divisor de x. En el cuerpo del bucle agrega una condición que cambie la variable esDivisible a true si x%y==0. No te olvides de incrementar y en una unidad para que el bucle pueda terminar
+ Al final, ya fuera del bucle imprime un mensaje indicando si x tiene o no tiene divisores e indica cuales son esos.
+ Ahora que lo has hecho por consola, crea una pequeña interfaz gráfica donde el usuario introduzca ese número x desde un textfield y la app le muestre en una label si el número tiene o no tiene divisores.
+ Por cierto, si un número no tiene divisores, se dice que el número es primo. Puedes ponerlo en tu app con un print o un mensaje adicional =)
+ 
+ NUMERO PRIMO!!!
+ *************************************************************************************/
+
+var x = 16
+var y = 2
+
+var isDivisible = false
+
+var divisores : [Int] = []
+
+
+
+while x > y
+{
+    if x % y == 0
+    {
+        isDivisible = true
+        divisores.append(y)
+    }
+    y += 1
+}
+
+if isDivisible
+{
+    print("El número \(x) no es número primo y es divisible con \(divisores)")
+}
+else{
+    print("El número \(x) es número primo")
+}
+
+
