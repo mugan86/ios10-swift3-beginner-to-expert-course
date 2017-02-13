@@ -168,3 +168,5 @@ shoppingList[shoppingList.count - 3]
 //Show last 3 articles
 shoppingList[shoppingList.count - 3...shoppingList.count-1]
 
+
+
