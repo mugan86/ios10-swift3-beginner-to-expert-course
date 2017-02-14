@@ -51,3 +51,58 @@ acciones["FB"] = "Facebook"
 acciones["TW"] = "Twitter"
 
 print(acciones)
+
+//Section 12 - Lecture 129 - Métodos con diccionarios
+
+var numbers : [ Int : String] = [1: "Uno", 2: "Dos", 3: "Tres", 4: "Cuatro"]
+
+numbers[3]
+
+if numbers.isEmpty
+{
+    print("Este diccionario está vacio")
+}
+else{
+    print("Este diccionario tiene \(numbers.count) elementos")
+}
+
+
+//Ver el valor de un diccionario, teniendo en cuenta si existe o no
+if let myNumber = numbers[3]
+{
+    print(myNumber)
+}
+else{
+    print("El valor no ha podido ser recuperado")
+}
+
+var airports = [String : String] () //Esto se deberá representar así ya que a continuación se inicializa
+
+airports = ["PMI" : "Palma de Mallorca", "BCN" : "Barcelona", "MAD" : "Madrid", "VAL": "Valenca"]
+
+//Para comprobar el valor antes de actualizarlo con una clave exacta
+
+if let oldAirport = airports.updateValue("Valencia", forKey: "VAL")
+{
+    print("El aeropuerto antiguo para la clave VAL era \(oldAirport)")
+}
+
+print(airports["VAL"]!)
+
+
+//Remove un elemento del diccionario
+
+if let oldAirport = airports.removeValue(forKey: "VAL")
+{
+    print("Hemos eliminado el aeropuerto de \(oldAirport)")
+}
+
+
+
+if let air = airports["VAL"]
+{
+    print(air)
+}
+else{
+    print("El aeropuerto con clave VAL no existe")
+}
