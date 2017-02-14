@@ -106,3 +106,38 @@ if let air = airports["VAL"]
 else{
     print("El aeropuerto con clave VAL no existe")
 }
+
+//Section 12 Lecture 130
+
+/*
+ Crea un diccionario con clave el nombre de tres personas y valores sus fechas de nacimiento en forma de String.
+ Inserta "Juan Gabriel Gomila" : "19-05-1888"
+ Modifica de forma segura mi año de nacimiento! Nací en 1988. Imprime la fecha antigua por consola para ello
+ Elimíname de tu diccionario de forma segura imprimiendo el año correcto de mi nacimiento.
+ */
+
+var personas = [String : String]  ()
+
+personas = ["Anartz Mugika Ledo": "10-01-1986", "Juan Palomo Palomo": "20-03-1990"]
+
+personas["Juan Gabriel Gomilla"] = "19-05-1888"
+
+print(personas)
+
+if let oldDayOfBirth = personas.updateValue("19-05-1988", forKey: "Juan Gabriel Gomilla")
+{
+    print("La fecha de nacimiento de Juan Gabriel Gomilla era \(oldDayOfBirth) y ahora es \(personas["Juan Gabriel Gomilla"]!)")
+}
+else{
+    print("No se ha actualizado la fecha seleccionada por no encontrarse ningún valor")
+}
+
+
+if let oldDayBirth = personas.removeValue(forKey: "Juan Gabriel Gomilla")
+{
+    print("Borramos a Juan Gabriel Gomilla cuya fecha de nacimiento es \(oldDayBirth)")
+}
+
+print(personas)
+
+
