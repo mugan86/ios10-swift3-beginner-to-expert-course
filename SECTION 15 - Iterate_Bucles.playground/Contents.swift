@@ -140,4 +140,44 @@ else{
     print("El número \(x) es número primo")
 }
 
+//SECTION 15 LECTURE 153 Bucles para recorrer arrays
 
+var names = ["Sabio", "Gruñon", "Mocoso", "Tímido", "Mudito", "Dormilón", "Feliz"]
+
+//Menor estricto (de 0 a 6 incluidos)
+
+for i in 0..<names.count
+{
+    print("El enanito número \(i+1) se llama \(names[i])")
+}
+
+//Mayor estrcito (iría de 0 a 7 pero descontamos -1 en names
+
+for i in 0...names.count - 1
+{
+    print("El enanito número \(i+1) se llama \(names[i])")
+}
+
+//Array de nombres (perdemos la opción de saber los ordenes de posición). Solo se tiene en cuenta el nombre del objecto
+
+for dwarfName in names
+{
+    print("\(dwarfName)")
+}
+
+//Lo mismo pero usando el index con enumerated
+
+for (index, dwarfName) in names.enumerated()
+{
+    print("El enanito en la posición \(index) se llama \(dwarfName)")
+}
+
+//Con while
+
+var pos = 0
+
+while pos < names.count
+{
+    print("El objecto en la posición \(pos) se llama \(names[pos])")
+    pos += 1
+}
