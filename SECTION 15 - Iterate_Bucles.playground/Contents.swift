@@ -181,3 +181,23 @@ while pos < names.count
     print("El objecto en la posición \(pos) se llama \(names[pos])")
     pos += 1
 }
+
+/***********************************************************
+ Ejercicios de recorridos de arrays
+ Sección 15, Clase 154
+ Crea un array con tus 5 películas favoritas.
+ Haz un bucle que lo recorra imprimiendo la posición y el nombre de cada película
+ Dentro del bucle agrega un if y busca dentro del array tu película favorita por encima del resto. Imprime solamente esa por consola.***/
+
+var favouriteFilms: [String] = ["Regreso al Futuro", "American History X", "Forrest Gump", "Matrix", "Jungla de Cristal"]
+
+print("**********************Mis películas favorittas son**********************************")
+for i in 0..<favouriteFilms.count
+{
+    if favouriteFilms[i] == "American History X"
+    {
+        print("Mi película favorita que se encuentra en la posición \(i) se llama \(favouriteFilms[i])")
+    }
+    //print("Película que se encuentra en la posición \(i) se llama \(favouriteFilms[i])")
+
+}
